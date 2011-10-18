@@ -9,6 +9,24 @@
 -zencoding.vim
 	- github
 
+Next steps:
+
+  mkdir vim-plugin
+  cd vim-plugin
+  git init
+  touch README
+  git add README
+  git commit -m 'first commit'
+  git remote add origin git@github.com:Hyvi/vim-plugin.git
+  git push -u origin master
+      
+
+Existing Git Repo?
+
+  cd existing_git_repo
+  git remote add origin git@github.com:Hyvi/vim-plugin.git
+  git push -u origin master
+ 
 /home/hyvi/.vim
 ├── doc
 │   └── matchit.txt
