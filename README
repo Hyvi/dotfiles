@@ -1,0 +1,27 @@
+-jslint.vim 
+	- github
+	- node.js
+		- github
+-javascript.vim
+	- http://code.google.com/p/web-indent/source/checkout
+-matchit.vim 
+	- vim script online 
+-zencoding.vim
+	- github
+
+/home/hyvi/.vim
+├── doc
+│   └── matchit.txt
+├── ftplugin
+│   └── javascript
+│       ├── jslint
+│       │   ├── jslint-core.js
+│       │   ├── runjslint.js
+│       │   └── runjslint.wsf
+│       └── jslint.vim
+├── indent
+│   └── javascript.vim
+└── plugin
+    ├── matchit.vim
+    └── zencoding.vim
+
