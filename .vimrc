@@ -20,9 +20,6 @@
 " $ yum install ctags
 " 
 let mapleader=";"
-set nocompatible              " be iMproved, required
-set backspace=indent,eol,start
-
 filetype off                  " required
 
 " set the runtime path to include Vundle and initialize
@@ -65,6 +62,7 @@ Plugin 'fatih/vim-go'
 " check
 Plugin 'vim-syntastic/syntastic'
 Plugin 'jelera/vim-javascript-syntax'
+Plugin 'NLKNguyen/papercolor-theme'
 " Plugin 'vim-python/python-syntax'
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
@@ -87,56 +85,43 @@ syntax  on
 " Put your non-Plugin stuff after this line
 "
 let g:vim_markdown_folding_disabled = 1
-" 配色方案
-" 
-color dracula
+
+
+"----------------------------------------------
+" Colors
+"----------------------------------------------
+" color dracula
+colorscheme PaperColor
 set background=dark
-autocmd ColorScheme dracula highlight Normal ctermbg=0
-" 素雅 solarized
-" Plug 'altercation/vim-colors-solarized'
-set background=light
-colorscheme solarized
-" colorscheme dark_plus
-" let g:solarized_termcolors=256
-" colorscheme dracula
 
-" 多彩 molokai
-" Plug 'tomasr/molokai' 
-" colorscheme molokai
- 
-" 使用iTerm2
-" 开启 ozh, 使用主题：agnoster
-" 安装Powerline-patched font字体: https://github.com/powerline/fonts 
-" colorscheme solarized
-
-" 复古 phd
-" Plug 'tomasr/molokai' 
-" colorscheme phd
-
-" set termguicolors
-" set t_Co=256
-
-" https://github.com/jaywcjlove/vim-web/blob/master/.vimrc
-set laststatus=2
+"----------------------------------------------
+" General settings
+"----------------------------------------------
+set nocompatible                  " be iMproved, required
+set backspace=indent,eol,start
+set autoread                      " reload file if the file changes on the disk
+set laststatus=2                  " https://github.com/jaywcjlove/vim-web/blob/master/.vimrc
 set ruler
 set number
-
 " set cursorline
 set cursorcolumn
-set hlsearch
-" 插入空白键（Space）来取代TAB
 set expandtab
 set tabstop=2
 set shiftwidth=2
 set softtabstop=2
-
 set ignorecase
-set incsearch 
-
-" set nofoldenable
 "set foldmethod=syntax
 set foldmethod=indent
 set foldlevel=20
+set list                          " show trailing whitespace
+set listchars=tab:\|\ ,trail:▫
+
+"----------------------------------------------
+" Searching
+"----------------------------------------------
+set hlsearch                      " disable search result highlighting
+set incsearch                     " move to match as you type the search query
+
 
 let g:gitgutter_escape_grep = 1
 
@@ -144,10 +129,8 @@ let g:gitgutter_escape_grep = 1
 set viminfo='10,\"100,:20,%,n~/.viminfo
 au BufReadPost * if line("'\"") > 0|if line("'\"") <= line("$")|exe("norm '\"")|else|exe "norm $"|endif|endif 
 
-" 自动加载修改过的文件
-set autoread
 
-vnoremap <Leader>y "+y        " 设置快捷键将选中文本块复制至系统剪贴板
+vnoremap <Leader>y "+y            " 设置快捷键将选中文本块复制至系统剪贴板
 nnoremap <Leader>p "+p            " 设置快捷键将系统剪贴板内容粘贴至vim
 
 nnoremap <Leader>q :q<CR>         " 定义快捷键关闭当前分割窗口
@@ -400,11 +383,87 @@ set updatetime=100
 
 
 " Syntastic Recommended settings
-set statusline+=%#warningmsg#
-set statusline+=%{SyntasticStatuslineFlag()}
-set statusline+=%*
+" set statusline+=%#warningmsg#
+" set statusline+=%{SyntasticStatuslineFlag()}
+" set statusline+=%*
 
 let g:syntastic_always_populate_loc_list = 1
 let g:syntastic_auto_loc_list = 1
 let g:syntastic_check_on_open = 1
 let g:syntastic_check_on_wq = 0
+
+"----------------------------------------------
+" Language: Golang
+"----------------------------------------------
+au FileType go set noexpandtab
+au FileType go set shiftwidth=4
+au FileType go set softtabstop=4
+au FileType go set tabstop=4
+
+" Mappings
+au FileType go nmap <F9> :GoCoverageToggle -short<cr>
+au FileType go nmap <F10> :GoTest -short<cr>
+au FileType go nmap <F12> <Plug>(go-def)
+au Filetype go nmap <leader>ga <Plug>(go-alternate-edit)
+au Filetype go nmap <leader>gah <Plug>(go-alternate-split)
+au Filetype go nmap <leader>gav <Plug>(go-alternate-vertical)
+au FileType go nmap <leader>gt :GoDeclsDir<cr>
+au FileType go nmap <leader>gc <Plug>(go-coverage-toggle)
+au FileType go nmap <leader>gd <Plug>(go-def)
+au FileType go nmap <leader>gdv <Plug>(go-def-vertical)
+au FileType go nmap <leader>gdh <Plug>(go-def-horizontal)
+au FileType go nmap <leader>gD <Plug>(go-doc)
+au FileType go nmap <leader>gDv <Plug>(go-doc-vertical)
+
+" Run goimports when running gofmt
+let g:go_fmt_command = "goimports"
+
+" Set neosnippet as snippet engine
+let g:go_snippet_engine = "neosnippet"
+
+" Enable syntax highlighting per default
+let g:go_highlight_types = 1
+let g:go_highlight_fields = 1
+let g:go_highlight_functions = 1
+let g:go_highlight_methods = 1
+let g:go_highlight_structs = 1
+let g:go_highlight_operators = 1
+let g:go_highlight_build_constraints = 1
+let g:go_highlight_extra_types = 1
+
+" Show type information
+let g:go_auto_type_info = 1
+
+" Highlight variable uses
+let g:go_auto_sameids = 1
+
+" Fix for location list when vim-go is used together with Syntastic
+let g:go_list_type = "quickfix"
+
+" gometalinter configuration
+let g:go_metalinter_command = ""
+let g:go_metalinter_deadline = "5s"
+let g:go_metalinter_enabled = [
+    \ 'deadcode',
+    \ 'errcheck',
+    \ 'gas',
+    \ 'goconst',
+    \ 'gocyclo',
+    \ 'golint',
+    \ 'gosimple',
+    \ 'ineffassign',
+    \ 'vet',
+    \ 'vetshadow'
+\]
+
+" Set whether the JSON tags should be snakecase or camelcase
+let g:go_addtags_transform = "snakecase"
+let g:go_metalinter_autosave = 1
+
+"----------------------------------------------
+" Language: Python
+"----------------------------------------------
+au FileType python set expandtab
+au FileType python set shiftwidth=4
+au FileType python set softtabstop=4
+au FileType python set tabstop=4
