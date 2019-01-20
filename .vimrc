@@ -121,9 +121,10 @@ set laststatus=2
 set ruler
 set number
 
-set cursorline
+" set cursorline
 set cursorcolumn
 set hlsearch
+" 插入空白键（Space）来取代TAB
 set expandtab
 set tabstop=2
 set shiftwidth=2
