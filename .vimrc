@@ -22,6 +22,7 @@
 let mapleader=";"
 filetype off                  " required
 
+" Vundle Plugin {{{
 " set the runtime path to include Vundle and initialize
 set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
@@ -32,9 +33,11 @@ call vundle#begin()
 Plugin 'VundleVim/Vundle.vim'
 
 " theme
-Plugin 'altercation/vim-colors-solarized'
-Plugin 'dracula/vim'
+" Plugin 'altercation/vim-colors-solarized'
+" Plugin 'dracula/vim'
 " Plugin 'tomasr/molokai'
+Plugin  'fatih/molokai'
+" Plugin 'NLKNguyen/papercolor-theme'
  
 " edit
 Plugin 'godlygeek/tabular'
@@ -52,7 +55,7 @@ Plugin 'dyng/ctrlsf.vim'
 Plugin 'Valloric/MatchTagAlways'
 
 " vue
-Plugin 'posva/vim-vue'
+" Plugin 'posva/vim-vue'
 " md
 Plugin 'plasticboy/vim-markdown'
 " git 
@@ -62,10 +65,10 @@ Plugin 'fatih/vim-go'
 " check
 Plugin 'vim-syntastic/syntastic'
 Plugin 'jelera/vim-javascript-syntax'
-Plugin 'NLKNguyen/papercolor-theme'
 " Plugin 'vim-python/python-syntax'
 " All of your Plugins must be added before the following line
-call vundle#end()            " required
+call vundle#end()            " required  
+" }}} 
 filetype plugin indent on    " required
 " To ignore plugin indent changes, instead use:
 "filetype plugin on
@@ -88,14 +91,18 @@ let g:vim_markdown_folding_disabled = 1
 
 
 "----------------------------------------------
-" Colors
+" Colors {{{ 
 "----------------------------------------------
+let g:rehash256 = 1
+let g:molokai_original = 1
+colorscheme molokai
 " color dracula
-colorscheme PaperColor
-set background=dark
+" colorscheme PaperColor
+" set background=dark
+"  }}} 
 
 "----------------------------------------------
-" General settings
+" General settings {{{ 
 "----------------------------------------------
 set nocompatible                  " be iMproved, required
 set backspace=indent,eol,start
@@ -103,18 +110,20 @@ set autoread                      " reload file if the file changes on the disk
 set laststatus=2                  " https://github.com/jaywcjlove/vim-web/blob/master/.vimrc
 set ruler
 set number
-" set cursorline
+set cursorline
 set cursorcolumn
 set expandtab
 set tabstop=2
 set shiftwidth=2
 set softtabstop=2
 set ignorecase
-"set foldmethod=syntax
-set foldmethod=indent
+set foldenable
+set foldmethod=indent             " syntax marker
 set foldlevel=20
 set list                          " show trailing whitespace
 set listchars=tab:\|\ ,trail:▫
+
+" }}}
 
 "----------------------------------------------
 " Searching
@@ -123,7 +132,6 @@ set hlsearch                      " disable search result highlighting
 set incsearch                     " move to match as you type the search query
 
 
-let g:gitgutter_escape_grep = 1
 
 " 恢复上次文件打开位置
 set viminfo='10,\"100,:20,%,n~/.viminfo
@@ -149,7 +157,7 @@ nmap <Leader>M %              " 定义快捷键在结对符之间跳转
 
 
 
-" 快速开关注释
+" 快速开关注释 {{{ 
 " Plug 'scrooloose/nerdcommenter'
 
 " 在注释符默认添加空格
@@ -167,9 +175,10 @@ let g:NERDCommentEmptyLines = 1
 " 启用时修整尾随空格注释
 let g:NERDTrimTrailingWhitespace = 1
 
+" }}}  
 
 
-" 工程文件浏览
+" 工程文件浏览 {{{ 
 
 " 查看工程文件列表
 " Plug 'scrooloose/nerdtree'
@@ -207,10 +216,10 @@ let NERDTreeMinimalUI=1
 let NERDTreeAutoDeleteBuffer=1
 " 根据后缀隐藏文件
 let NERDTreeIgnore = ['\.pyc$']
+" }}} 
 
 
-
-" YCM 补全
+" YCM 补全 {{{ 
 
 " 随键而全的、支持模糊搜索的、高速补全的插件
 " YCM 由 google 公司搜索项目组的软件工程师 Strahinja Val Markovic 所开发
@@ -258,7 +267,9 @@ nnoremap <leader>gl :YcmCompleter GoToDeclaration<CR>
 nnoremap <leader>gf :YcmCompleter GoToDefinition<CR>
 nnoremap <leader>gg :YcmCompleter GoToDefinitionElseDeclaration<CR>
 
-" 标签列表
+" }}}
+
+" 标签列表 {{{ 
 
 " Plug 'majutsushi/tagbar'
 " 基于标签的标识符列表插件
@@ -279,8 +290,9 @@ let g:tagbar_type_css = {
         \ 'i:identities'
     \ ]
 \ }
+" }}}
 
-" 查找
+" 查找 ctrlsf.vim {{{ 
 
 " 上下文插件，例如搜素到关键字，中间缩略，展示一段上下文
 " Plug 'dyng/ctrlsf.vim'
@@ -306,19 +318,10 @@ let g:ctrlsf_default_view_mode = 'normal'
 " working directory and project means project root. CtrlSF locates project
 " root by searching VCS root (.git, .hg, .svn, etc.)
 let g:ctrlsf_default_root = 'project'
+" }}} 
 
 
-" 批量编辑 multiple selections vor vim
-" Plugin 'terryma/vim-multiple-cursors'
-" 
-" Default mapping
-" let g:multi_cursor_next_key='<C-n>'
-" let g:multi_cursor_prev_key='<C-p>'
-" let g:multi_cursor_skip_key='<C-x>'
-" let g:multi_cursor_quit_key='<Esc>'
-
-
-"vim-snippets / UltiSnip
+"vim-snippets / UltiSnip {{{ 
 
 " Trigger configuration. Do not use <tab> if you use https://github.com/Valloric/YouCompleteMe.
 
@@ -343,37 +346,11 @@ let g:mta_filetypes = {
 "  Jumps to the enclosing tag if the tag is visible
 nnoremap <leader>% :MtaJumpToOtherTag<cr>
 
+"}}} 
 
-" posva/vim-vue
-" My syntax highlighting stops working randomly
-autocmd FileType vue syntax sync fromstart
-" autocmd BufRead,BufNewFile *.vue setlocal filetype=vue.html.javascript.css
+" GitGutter {{{ 
 
-"  How can I use NERDCommenter in Vue files?
-let g:ft = ''
-function! NERDCommenter_before()
-  if &ft == 'vue'
-    let g:ft = 'vue'
-    let stack = synstack(line('.'), col('.'))
-    if len(stack) > 0
-      let syn = synIDattr((stack)[0], 'name')
-      if len(syn) > 0
-        exe 'setf ' . substitute(tolower(syn), '^vue_', '', '')
-      endif
-    endif
-  endif
-endfunction
-function! NERDCommenter_after()
-  if g:ft == 'vue'
-    setf vue
-    let g:ft = ''
-  endif
-endfunction
-
-" highlight GitGutterAdd ctermfg=White
-" highlight GitGutterDelete ctermfg=White
-" highlight GitGutterChange ctermfg=White
-
+let g:gitgutter_escape_grep = 1
 highlight GitGutterAdd ctermbg=Green
 highlight GitGutterDelete ctermbg=Red
 highlight GitGutterChange ctermbg=Yellow
@@ -381,7 +358,9 @@ let g:gitgutter_grep=''
 let g:gitgutter_terminal_reports_focus=0
 set updatetime=100
 
+" }}}
 
+" Syntastic {{{ 
 " Syntastic Recommended settings
 " set statusline+=%#warningmsg#
 " set statusline+=%{SyntasticStatuslineFlag()}
@@ -391,9 +370,10 @@ let g:syntastic_always_populate_loc_list = 1
 let g:syntastic_auto_loc_list = 1
 let g:syntastic_check_on_open = 1
 let g:syntastic_check_on_wq = 0
+" }}}
 
 "----------------------------------------------
-" Language: Golang
+" Language: Golang {{{
 "----------------------------------------------
 au FileType go set noexpandtab
 au FileType go set shiftwidth=4
@@ -435,7 +415,7 @@ let g:go_highlight_extra_types = 1
 let g:go_auto_type_info = 1
 
 " Highlight variable uses
-let g:go_auto_sameids = 1
+" let g:go_auto_sameids = 1
 
 " Fix for location list when vim-go is used together with Syntastic
 let g:go_list_type = "quickfix"
@@ -459,11 +439,27 @@ let g:go_metalinter_enabled = [
 " Set whether the JSON tags should be snakecase or camelcase
 let g:go_addtags_transform = "snakecase"
 let g:go_metalinter_autosave = 1
+let g:go_metalinter_command = "golangci-lint"
+" by default guru is being used as it covers all edge cases, But one might
+" also use godef as it's faster 
+" Guru isn't aware of modules 
+let g:go_def_mode = 'godef'
+" }}}
+
 
 "----------------------------------------------
-" Language: Python
+" Language: Python {{{
 "----------------------------------------------
 au FileType python set expandtab
 au FileType python set shiftwidth=4
 au FileType python set softtabstop=4
 au FileType python set tabstop=4
+" }}}
+
+"----------------------------------------------
+" Language: YAML {{{ 
+"----------------------------------------------
+au! BufNewFile,BufReadPost *.{yaml,yml} set filetype=yaml foldmethod=indent
+autocmd FileType yaml setlocal ts=2 sts=2 sw=2 expandtab
+
+" }}}
