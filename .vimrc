@@ -300,19 +300,20 @@ let g:tagbar_type_css = {
 " 快捷键速记法：search in project
 let g:ctrlsf_ackprg = 'rg' 
 nnoremap <Leader>sp :CtrlSF<CR>
-let g:ctrlsf_auto_close = 1
 " 选中搜索 - 文本中选中关键字
 vmap     <Leader>sp <Plug>CtrlSFVwordPath
-" 选中搜索 - 结果列表
-vmap     <Leader>sl <Plug>CtrlSFQuickfixVwordPath
-vmap     <Leader>sL <Plug>CtrlSFQuickfixVwordExec
 " CtrlSF Widnow 打开／关闭切换
-vmap     <Leader>st :CtrlSFToggle<CR>
+vnoremap     <C-F>t <Esc>:CtrlSFToggle<CR>
 nnoremap <C-F>t :CtrlSFToggle<CR>
 inoremap <C-F>t <Esc>:CtrlSFToggle<CR>
 nmap     <C-F>f <Plug>CtrlSFPrompt
 " 预设视图 normal/compact
-let g:ctrlsf_default_view_mode = 'normal'
+let g:ctrlsf_default_view_mode = 'compact'
+" define CtrlSF focuses result pane
+let g:ctrlsf_auto_focus = {
+    \ "at": "done",
+    \ "duration_less_than": 1000
+    \}
 " g:ctrlsf_default_root defines how CtrlSF find search root when no explicit
 " path is given. Two possible values are cwd and project. cwd means current
 " working directory and project means project root. CtrlSF locates project
@@ -332,8 +333,10 @@ let g:UltiSnipsJumpBackwardTrigger="<c-z>"
 " If you want :UltiSnipsEdit to split your window.
 let g:UltiSnipsEditSplit="vertical"
 
+" }}}
 
-" Valloric/MatchTagAlways
+
+" Valloric/MatchTagAlways {{{ 
 
 " This option holds all the filetypes for which this plugin will try to find and highlight enclosing tags.
 let g:mta_filetypes = {
