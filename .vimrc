@@ -60,6 +60,7 @@ Plugin 'Valloric/MatchTagAlways'
 Plugin 'plasticboy/vim-markdown'
 " git 
 Plugin 'airblade/vim-gitgutter'
+Plugin 'tpope/vim-fugitive'
 " go 
 Plugin 'fatih/vim-go'
 " check
@@ -360,6 +361,8 @@ highlight GitGutterChange ctermbg=Yellow
 let g:gitgutter_grep=''
 let g:gitgutter_terminal_reports_focus=0
 set updatetime=100
+nmap [h <Plug>GitGutterPrevHunk
+nmap ]h <Plug>GitGutterNextHunk
 
 " }}}
 
