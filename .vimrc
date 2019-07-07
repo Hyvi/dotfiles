@@ -65,8 +65,6 @@ Plugin 'tpope/vim-fugitive'
 Plugin 'fatih/vim-go'
 " check
 Plugin 'vim-syntastic/syntastic'
-Plugin 'jelera/vim-javascript-syntax'
-" Plugin 'vim-python/python-syntax'
 " All of your Plugins must be added before the following line
 call vundle#end()            " required  
 " }}} 
@@ -375,7 +373,16 @@ nmap ]h <Plug>GitGutterNextHunk
 let g:syntastic_always_populate_loc_list = 1
 let g:syntastic_auto_loc_list = 1
 let g:syntastic_check_on_open = 1
-let g:syntastic_check_on_wq = 0
+let g:syntastic_check_on_wq = 1
+let g:syntastic_python_checkers = ['pylint']
+
+" let g:syntastic_go_go_build_args=''
+"
+" let g:syntastic_go_checkers = ['golint', 'govet']
+" both 'vim-go' and syntastic run systax checks by default when you save
+" buffers to disk.  Then set passive mode in syntastic for "go" filetypes
+let g:syntastic_mode_map = { 'mode': 'active', 'passive_filetypes': ['go'] }
+
 " }}}
 
 "----------------------------------------------
@@ -427,7 +434,7 @@ let g:go_auto_type_info = 1
 let g:go_list_type = "quickfix"
 
 " gometalinter configuration
-let g:go_metalinter_command = ""
+let g:go_metalinter_command = "golangci-lint"
 let g:go_metalinter_deadline = "5s"
 let g:go_metalinter_enabled = [
     \ 'deadcode',
@@ -435,7 +442,6 @@ let g:go_metalinter_enabled = [
     \ 'gas',
     \ 'goconst',
     \ 'gocyclo',
-    \ 'golint',
     \ 'gosimple',
     \ 'ineffassign',
     \ 'vet',
@@ -445,7 +451,6 @@ let g:go_metalinter_enabled = [
 " Set whether the JSON tags should be snakecase or camelcase
 let g:go_addtags_transform = "snakecase"
 let g:go_metalinter_autosave = 1
-let g:go_metalinter_command = "golangci-lint"
 " by default guru is being used as it covers all edge cases, But one might
 " also use godef as it's faster 
 " Guru isn't aware of modules 
