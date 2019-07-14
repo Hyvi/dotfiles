@@ -419,18 +419,19 @@ au FileType go set tabstop=4
 
 " Mappings
 au FileType go nmap <F9> :GoCoverageToggle -short<cr>
-au FileType go nmap <F10> :GoTest -short<cr>
-au FileType go nmap <F12> <Plug>(go-def)
 au Filetype go nmap <leader>ga <Plug>(go-alternate-edit)
 au Filetype go nmap <leader>gah <Plug>(go-alternate-split)
 au Filetype go nmap <leader>gav <Plug>(go-alternate-vertical)
 au FileType go nmap <leader>gt :GoDeclsDir<cr>
 au FileType go nmap <leader>gc <Plug>(go-coverage-toggle)
-au FileType go nmap <leader>gd <Plug>(go-def)
-au FileType go nmap <leader>gdv <Plug>(go-def-vertical)
-au FileType go nmap <leader>gdh <Plug>(go-def-horizontal)
-au FileType go nmap <leader>gD <Plug>(go-doc)
-au FileType go nmap <leader>gDv <Plug>(go-doc-vertical)
+au FileType go nmap <leader>v <Plug>(go-def-vertical)
+au FileType go nmap <leader>h <Plug>(go-def-split)
+au FileType go nmap <leader>x <Plug>(go-doc-vertical)
+autocmd FileType go nmap <silent> <Leader>d <Plug>(go-def-tab)
+au FileType go nmap <leader>l <Plug>(go-metalinter)
+autocmd FileType go nmap <silent> <leader>t  <Plug>(go-test)
+autocmd FileType go nmap <silent> <leader>r  <Plug>(go-run)
+
 
 " Run goimports when running gofmt
 let g:go_fmt_command = "goimports"
