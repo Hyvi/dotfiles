@@ -42,6 +42,7 @@ Plugin  'fatih/molokai'
 " edit
 Plugin 'godlygeek/tabular'
 Plugin 'scrooloose/nerdtree'
+Plugin 'Xuyuanp/nerdtree-git-plugin'
 Plugin 'scrooloose/nerdcommenter'
 " 随键而全的、支持模糊搜索的、高速补全的插件
 " YCM 由 google 公司搜索项目组的软件工程师 Strahinja Val Markovic 所开发
@@ -95,9 +96,11 @@ let g:vim_markdown_folding_disabled = 1
 let g:rehash256 = 1
 let g:molokai_original = 1
 colorscheme molokai
+set background=dark
+" set background=light
+" colorscheme solarized
 " color dracula
 " colorscheme PaperColor
-" set background=dark
 "  }}} 
 
 "----------------------------------------------
@@ -217,6 +220,20 @@ let NERDTreeAutoDeleteBuffer=1
 let NERDTreeIgnore = ['\.pyc$']
 " }}} 
 
+" nerdtree-git-plugin 配置 {{{ 
+let g:NERDTreeIndicatorMapCustom = {
+    \ "Modified"  : "✹",
+    \ "Staged"    : "✚",
+    \ "Untracked" : "✭",
+    \ "Renamed"   : "➜",
+    \ "Unmerged"  : "═",
+    \ "Deleted"   : "✖",
+    \ "Dirty"     : "✗",
+    \ "Clean"     : "✔︎",
+    \ 'Ignored'   : '☒',
+    \ "Unknown"   : "?"
+    \ }
+" }}}
 
 " YCM 补全 {{{ 
 
