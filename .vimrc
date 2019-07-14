@@ -268,6 +268,11 @@ nnoremap <leader>gg :YcmCompleter GoToDefinitionElseDeclaration<CR>
 
 " }}}
 
+" command-t 文件检索 {{{
+" supplement rather than replace the global setting(Vim's global 'wildignore' setting 
+let g:CommandTWildIgnore=&wildignore . ",vendor"
+" }}}
+
 " 标签列表 {{{ 
 
 " Plug 'majutsushi/tagbar'
