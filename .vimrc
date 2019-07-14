@@ -318,6 +318,8 @@ let g:ctrlsf_auto_focus = {
 " working directory and project means project root. CtrlSF locates project
 " root by searching VCS root (.git, .hg, .svn, etc.)
 let g:ctrlsf_default_root = 'project'
+" 被搜索忽略的目录(directories that will be ignore by default)
+let g:ctrlsf_ignore_dir = ['vendor']
 " }}} 
 
 
