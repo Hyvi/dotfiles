@@ -410,8 +410,9 @@ let g:syntastic_mode_map = { 'mode': 'active', 'passive_filetypes': ['go'] }
 " }}}
 
 "----------------------------------------------
-" Language: Golang {{{
+" Language: Golang  vim-go {{{
 "----------------------------------------------
+"使用版本v1.20, 最新master版本不稳定
 au FileType go set noexpandtab
 au FileType go set shiftwidth=4
 au FileType go set softtabstop=4
@@ -428,7 +429,8 @@ au FileType go nmap <leader>v <Plug>(go-def-vertical)
 au FileType go nmap <leader>h <Plug>(go-def-split)
 au FileType go nmap <leader>x <Plug>(go-doc-vertical)
 autocmd FileType go nmap <silent> <Leader>gd <Plug>(go-def-tab)
-au FileType go nmap <silent> <leader>l :GoMetaLinter %:p<CR>
+" GoMetaLinter 后面必须跟上path， 目前没有获取当前文件名的当时。先取消此快捷键
+" au FileType go nmap <silent> <leader>l :GoMetaLinter <CR>
 autocmd FileType go nmap <silent> <leader>gt  <Plug>(go-test)
 autocmd FileType go nmap <silent> <leader>gr  <Plug>(go-run)
 
@@ -461,7 +463,7 @@ let g:go_list_type = "quickfix"
 
 " gometalinter configuration
 let g:go_metalinter_command = "golangci-lint"
-let g:go_metalinter_deadline = "5s"
+let g:go_metalinter_deadline = "15s"
 let g:go_metalinter_enabled = [
     \ 'govet',
     \ 'golint',
