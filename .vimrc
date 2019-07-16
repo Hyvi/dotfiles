@@ -51,7 +51,7 @@ Plugin 'wincent/command-t'
 Plugin 'majutsushi/tagbar'
 Plugin 'terryma/vim-multiple-cursors'
 Plugin 'SirVer/ultisnips'
-Plugin 'honza/vim-snippets'
+" Plugin 'honza/vim-snippets'
 Plugin 'dyng/ctrlsf.vim'
 Plugin 'Valloric/MatchTagAlways'
 
@@ -402,7 +402,7 @@ let g:syntastic_python_checkers = ['pylint']
 
 " let g:syntastic_go_go_build_args=''
 "
-" let g:syntastic_go_checkers = ['golint', 'govet']
+let g:syntastic_go_checkers = ['gometalinter']
 " both 'vim-go' and syntastic run systax checks by default when you save
 " buffers to disk.  Then set passive mode in syntastic for "go" filetypes
 let g:syntastic_mode_map = { 'mode': 'active', 'passive_filetypes': ['go'] }
@@ -427,10 +427,10 @@ au FileType go nmap <leader>gc <Plug>(go-coverage-toggle)
 au FileType go nmap <leader>v <Plug>(go-def-vertical)
 au FileType go nmap <leader>h <Plug>(go-def-split)
 au FileType go nmap <leader>x <Plug>(go-doc-vertical)
-autocmd FileType go nmap <silent> <Leader>d <Plug>(go-def-tab)
-au FileType go nmap <leader>l <Plug>(go-metalinter)
-autocmd FileType go nmap <silent> <leader>t  <Plug>(go-test)
-autocmd FileType go nmap <silent> <leader>r  <Plug>(go-run)
+autocmd FileType go nmap <silent> <Leader>gd <Plug>(go-def-tab)
+au FileType go nmap <silent> <leader>l :GoMetaLinter %:p<CR>
+autocmd FileType go nmap <silent> <leader>gt  <Plug>(go-test)
+autocmd FileType go nmap <silent> <leader>gr  <Plug>(go-run)
 
 
 " Run goimports when running gofmt
@@ -457,20 +457,38 @@ let g:go_auto_type_info = 1
 
 " Fix for location list when vim-go is used together with Syntastic
 let g:go_list_type = "quickfix"
+" let g:go_list_type_commands = {"GoMetaLinter": "locationlist"}
 
 " gometalinter configuration
 let g:go_metalinter_command = "golangci-lint"
 let g:go_metalinter_deadline = "5s"
 let g:go_metalinter_enabled = [
-    \ 'deadcode',
+    \ 'govet',
+    \ 'golint',
     \ 'errcheck',
-    \ 'gas',
-    \ 'goconst',
-    \ 'gocyclo',
+    \ 'staticcheck',
+    \ 'unused',
     \ 'gosimple',
+    \ 'structcheck',
+    \ 'varcheck',
     \ 'ineffassign',
-    \ 'vet',
-    \ 'vetshadow'
+    \ 'deadcode', 
+    \ 'typecheck'
+\]
+
+
+let g:go_metalinter_autosave_enabled = [
+    \ 'govet',
+    \ 'golint',
+    \ 'errcheck',
+    \ 'staticcheck',
+    \ 'unused',
+    \ 'gosimple',
+    \ 'structcheck',
+    \ 'varcheck',
+    \ 'ineffassign',
+    \ 'deadcode', 
+    \ 'typecheck'
 \]
 
 " Set whether the JSON tags should be snakecase or camelcase
