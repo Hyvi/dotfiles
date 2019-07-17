@@ -452,7 +452,7 @@ let g:go_highlight_build_constraints = 1
 let g:go_highlight_extra_types = 1
 
 " Show type information
-let g:go_auto_type_info = 1
+" let g:go_auto_type_info = 1
 
 " Highlight variable uses
 " let g:go_auto_sameids = 1
