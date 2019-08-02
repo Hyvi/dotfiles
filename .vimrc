@@ -499,7 +499,7 @@ let g:go_metalinter_autosave = 1
 " by default guru is being used as it covers all edge cases, But one might
 " also use godef as it's faster 
 " Guru isn't aware of modules 
-let g:go_def_mode = 'godef'
+" let g:go_def_mode = 'godef'
 " }}}
 
 
