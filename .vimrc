@@ -66,6 +66,9 @@ Plugin 'tpope/vim-fugitive'
 Plugin 'fatih/vim-go'
 " check
 Plugin 'vim-syntastic/syntastic'
+
+"eng dict
+Plugin 'farconics/victionary'
 " All of your Plugins must be added before the following line
 call vundle#end()            " required  
 " }}} 
@@ -274,6 +277,9 @@ let g:ycm_cache_omnifunc=0
 " 语法关键字补全
 let g:ycm_seed_identifiers_with_syntax=1
 
+" 设置为空字符串，去掉默认的快捷键
+let g:ycm_key_detailed_diagnostics = ''
+
 " 跳转到定义GoToDefinition
 " 跳转到声明GoToDeclaration
 " 以及两者的合体GoToDefinitionElseDeclaration
@@ -282,6 +288,7 @@ let g:ycm_seed_identifiers_with_syntax=1
 nnoremap <leader>gl :YcmCompleter GoToDeclaration<CR>
 nnoremap <leader>gf :YcmCompleter GoToDefinition<CR>
 nnoremap <leader>gg :YcmCompleter GoToDefinitionElseDeclaration<CR>
+
 
 " }}}
 
@@ -518,4 +525,13 @@ au FileType python set tabstop=4
 au! BufNewFile,BufReadPost *.{yaml,yml} set filetype=yaml foldmethod=indent
 autocmd FileType yaml setlocal ts=2 sts=2 sw=2 expandtab
 
+" }}}
+
+
+"----------------------------------------------
+" farconics/victionary: a dictionary plugin for vim  {{{ 
+"----------------------------------------------
+let g:victionary#dictionary = "gcide"
+let g:victionary#map_defaults = 0
+nmap <Leader>d <Plug>(victionary#define_under_cursor)
 " }}}
