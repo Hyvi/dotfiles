@@ -469,6 +469,8 @@ let g:go_list_type = "quickfix"
 " let g:go_list_type_commands = {"GoMetaLinter": "locationlist"}
 
 " gometalinter configuration
+" 当升级golang版本时，需要重新rebuild golangci-lint， 执行如下命令  
+" GO111MODULE=off go get  -u github.com/golangci/golangci-lint/cmd/golangci-lint 
 let g:go_metalinter_command = "golangci-lint"
 let g:go_metalinter_deadline = "15s"
 let g:go_metalinter_enabled = [
