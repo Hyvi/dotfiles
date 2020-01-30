@@ -7,8 +7,7 @@ vim配置,持续更新
 vim-go 对vim 有最低版本的要求， 当前要求最低版本是 8.0.1453 
 > vim-go requires at least Vim 8.0.1453 or Neovim 0.3.2, but you're using an older version.  
 
-如果版本太低， 升级到最新版， 升级VIM版本， 升级方式如下： 
-.... 
+如果版本太低， 升级到最新版， 升级VIM版本， 升级方式待补充。
 
 ## 克隆该仓库
 假定你当前的目录为home（~/）目录下
