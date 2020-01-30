@@ -26,6 +26,7 @@ ln -s ~/vim-plugin/.vimrc .vimrc
 
 ## YCM设置 
 > The ycmd server SHUT DOWN (restart with ':YcmRestartServer'). YCM core library not detected; you need to compile YCM before using it. Follow the instructions in the documentation.
+参考YCMComplete的Readme文件安装。 
 
 
 
