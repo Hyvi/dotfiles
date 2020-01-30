@@ -1,17 +1,31 @@
 vim配置,持续更新
 
+
 # 安装
 
-假定你当前的目录为home（~/）目录下，克隆该仓库
+## 检查vim版本
+vim-go 对vim 有最低版本的要求， 当前要求最低版本是 8.0.1453 
+> vim-go requires at least Vim 8.0.1453 or Neovim 0.3.2, but you're using an older version.  
+
+## 克隆该仓库
+假定你当前的目录为home（~/）目录下
 
 ```
 git clone https://github.com/Hyvi/vim-plugin
 ```
 
-创建软连接
+## 创建软连接
 ``` bash 
 ln -s ~/vim-plugin/.vimrc .vimrc
 ```
+
+## PluginInstall 
+使用vundle方式安装Plugin 
+
+## YCM设置 
+> The ycmd server SHUT DOWN (restart with ':YcmRestartServer'). YCM core library not detected; you need to compile YCM before using it. Follow the instructions in the documentation.
+
+
 # 参考
 
 sebdah's nvim configuration  
