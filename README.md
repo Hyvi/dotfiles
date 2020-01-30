@@ -2,7 +2,7 @@ vim配置,持续更新
 
 # 安装
 
-假定你当前的目录为home目录下，克隆该仓库
+假定你当前的目录为home（~/）目录下，克隆该仓库
 
 ```
 git clone https://github.com/Hyvi/vim-plugin
