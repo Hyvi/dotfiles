@@ -49,6 +49,7 @@ Plugin 'scrooloose/nerdcommenter'
 Plugin 'Valloric/YouCompleteMe' 
 Plugin 'wincent/command-t'
 Plugin 'majutsushi/tagbar'
+Plugin 'lvht/tagbar-markdown'
 Plugin 'terryma/vim-multiple-cursors'
 Plugin 'SirVer/ultisnips'
 " Plugin 'honza/vim-snippets'
@@ -305,19 +306,12 @@ let g:CommandTWildIgnore=&wildignore . ",vendor"
 " 安装ctags 之后签列表子窗口才能出现
 
 let tagbar_right=1                      " 设置 tagbar 子窗口的位置出现在主编辑区的左边
-let tagbar_width=32                    " 设置标签子窗口的宽度
+let tagbar_width=48                    " 设置标签子窗口的宽度
 let g:tagbar_compact=1                 " tagbar 子窗口中不显示冗余帮助信息
-nnoremap <Leader>ilt :TagbarToggle<CR> " 设置显示／隐藏标签列表子窗口的快捷键。速记：identifier list by tag
+nnoremap <F8> :TagbarToggle<CR> " 设置显示／隐藏标签列表子窗口的快捷键。速记：identifier list by tag
 
-" 设置 ctags 对哪些代码标识符生成标签
-let g:tagbar_type_css = {
-\ 'ctagstype' : 'Css',
-    \ 'kinds'     : [
-        \ 'c:classes',
-        \ 's:selectors',
-        \ 'i:identities'
-    \ ]
-\ }
+" markdown disable sort 
+let g:tagbar_sort = 0
 " }}}
 
 " 查找 ctrlsf.vim {{{ 
