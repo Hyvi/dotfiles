@@ -1,6 +1,6 @@
 " # 上面插件安装完成之后执行下面内容
 " # command-t 文件搜索插件安装
-" $ cd ~/.vim/plugged/command-t 
+" $ cd ~/.vim/bundle/command-t 
 " $ rake make
 " 
 " # 搜索文本内容工具
@@ -70,6 +70,9 @@ Plugin 'vim-syntastic/syntastic'
 
 "eng dict
 Plugin 'farconics/victionary'
+
+" chinese 排版
+Plugin 'hotoo/pangu.vim'
 " All of your Plugins must be added before the following line
 call vundle#end()            " required  
 " }}} 
@@ -99,8 +102,8 @@ let g:vim_markdown_folding_disabled = 1
 "----------------------------------------------
 let g:rehash256 = 1
 let g:molokai_original = 1
-colorscheme molokai
-set background=dark
+" colorscheme molokai
+" set background=dark
 " set background=light
 " colorscheme solarized
 " color dracula
@@ -116,8 +119,8 @@ set autoread                      " reload file if the file changes on the disk
 set laststatus=2                  " https://github.com/jaywcjlove/vim-web/blob/master/.vimrc
 set ruler
 set number
-set cursorline
-set cursorcolumn
+" set cursorline
+" set cursorcolumn
 set expandtab
 set tabstop=2
 set shiftwidth=2
@@ -306,12 +309,15 @@ let g:CommandTWildIgnore=&wildignore . ",vendor"
 " 安装ctags 之后签列表子窗口才能出现
 
 let tagbar_right=1                      " 设置 tagbar 子窗口的位置出现在主编辑区的左边
-let tagbar_width=48                    " 设置标签子窗口的宽度
+let tagbar_width=36                   " 设置标签子窗口的宽度
 let g:tagbar_compact=1                 " tagbar 子窗口中不显示冗余帮助信息
 nnoremap <F8> :TagbarToggle<CR> " 设置显示／隐藏标签列表子窗口的快捷键。速记：identifier list by tag
 
 " markdown disable sort 
 let g:tagbar_sort = 0
+
+"  tagbar-autoopen  for specific filetypes go\md
+autocmd FileType go,markdown nested :TagbarOpen
 " }}}
 
 " 查找 ctrlsf.vim {{{ 
@@ -330,7 +336,7 @@ nnoremap <C-F>t :CtrlSFToggle<CR>
 inoremap <C-F>t <Esc>:CtrlSFToggle<CR>
 nmap     <C-F>f <Plug>CtrlSFPrompt
 " 预设视图 normal/compact
-let g:ctrlsf_default_view_mode = 'compact'
+let g:ctrlsf_default_view_mode = 'normal'
 " define CtrlSF focuses result pane
 let g:ctrlsf_auto_focus = {
     \ "at": "done",
@@ -459,7 +465,7 @@ let g:go_highlight_extra_types = 1
 " let g:go_auto_sameids = 1
 
 " Fix for location list when vim-go is used together with Syntastic
-let g:go_list_type = "quickfix"
+" let g:go_list_type = "locationlist"
 " let g:go_list_type_commands = {"GoMetaLinter": "locationlist"}
 
 " gometalinter configuration
@@ -467,9 +473,9 @@ let g:go_list_type = "quickfix"
 " GO111MODULE=off go get  -u github.com/golangci/golangci-lint/cmd/golangci-lint 
 let g:go_metalinter_command = "golangci-lint"
 let g:go_metalinter_deadline = "15s"
+
 let g:go_metalinter_enabled = [
     \ 'govet',
-    \ 'golint',
     \ 'errcheck',
     \ 'staticcheck',
     \ 'unused',
@@ -477,14 +483,13 @@ let g:go_metalinter_enabled = [
     \ 'structcheck',
     \ 'varcheck',
     \ 'ineffassign',
-    \ 'deadcode', 
+    \ 'deadcode',
     \ 'typecheck'
 \]
 
 
 let g:go_metalinter_autosave_enabled = [
     \ 'govet',
-    \ 'golint',
     \ 'errcheck',
     \ 'staticcheck',
     \ 'unused',
@@ -492,7 +497,7 @@ let g:go_metalinter_autosave_enabled = [
     \ 'structcheck',
     \ 'varcheck',
     \ 'ineffassign',
-    \ 'deadcode', 
+    \ 'deadcode',
     \ 'typecheck'
 \]
 
