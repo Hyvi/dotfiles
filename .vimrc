@@ -510,6 +510,13 @@ let g:go_metalinter_autosave = 1
 " let g:go_def_mode = 'godef'
 " }}}
 
+" Identifier highlighting
+" https://github.com/fatih/vim-go/wiki/Tutorial#identifier-highlighting 
+let g:go_auto_sameids = 1
+
+" Identifier resolution 
+" https://github.com/fatih/vim-go/wiki/Tutorial#identifier-resolution
+let g:go_auto_type_info = 1
 
 "----------------------------------------------
 " Language: Python {{{
