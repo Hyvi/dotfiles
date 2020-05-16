@@ -73,6 +73,9 @@ Plugin 'farconics/victionary'
 
 " chinese 排版
 Plugin 'hotoo/pangu.vim'
+
+" 
+Plugin 'maxbrunsfeld/vim-yankstack'
 " All of your Plugins must be added before the following line
 call vundle#end()            " required  
 " }}} 
@@ -550,4 +553,10 @@ autocmd FileType yaml setlocal ts=2 sts=2 sw=2 expandtab
 let g:victionary#dictionary = "gcide"
 let g:victionary#map_defaults = 0
 nmap <Leader>d <Plug>(victionary#define_under_cursor)
+" }}}
+
+" vim-yankstack {{{ 
+" ref: https://www.0value.com/my-go-centric-vim-setup 
+nmap <leader>p <Plug>yankstack_substitute_older_paste
+nmap <leader>P <Plug>yankstack_substitute_newer_paste
 " }}}
