@@ -146,6 +146,14 @@ set incsearch                     " move to match as you type the search query
 set viminfo='10,\"100,:20,%,n~/.viminfo
 au BufReadPost * if line("'\"") > 0|if line("'\"") <= line("$")|exe("norm '\"")|else|exe "norm $"|endif|endif 
 
+" 恢复fold状态
+" https://stackoverflow.com/questions/37552913/vim-how-to-keep-folds-on-save 
+augroup remember_folds
+  autocmd!
+  autocmd BufWinLeave * mkview
+  autocmd BufWinEnter * silent! loadview
+augroup END
+
 
 vnoremap <Leader>y "+y            " 设置快捷键将选中文本块复制至系统剪贴板
 nnoremap <Leader>p "+p            " 设置快捷键将系统剪贴板内容粘贴至vim
@@ -461,8 +469,6 @@ let g:go_highlight_extra_types = 1
 " Show type information
 " let g:go_auto_type_info = 1
 
-" Highlight variable uses
-" let g:go_auto_sameids = 1
 
 " Fix for location list when vim-go is used together with Syntastic
 " let g:go_list_type = "locationlist"
@@ -512,11 +518,13 @@ let g:go_metalinter_autosave = 1
 
 " Identifier highlighting
 " https://github.com/fatih/vim-go/wiki/Tutorial#identifier-highlighting 
-let g:go_auto_sameids = 1
+" 提示错误
+" let g:go_auto_sameids = 1
 
 " Identifier resolution 
 " https://github.com/fatih/vim-go/wiki/Tutorial#identifier-resolution
-let g:go_auto_type_info = 1
+" 与错误提示冲突了，so 不启用改功能
+" let g:go_auto_type_info = 1
 
 "----------------------------------------------
 " Language: Python {{{
