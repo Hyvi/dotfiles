@@ -10,6 +10,11 @@ tagbar 本身支持 markdown, [ wiki markdown ](https://github.com/majutsushi/ta
 
 - tagbar-markdown 需要Php的支持. 
 
+## markdown
+### suan/vim-instant-markdown 
+
+- 安装完node后，安装sudo npm -g install instant-markdown-d 
+
 # 参考
 
 sebdah's nvim configuration  

@@ -52,7 +52,7 @@ Plugin 'majutsushi/tagbar'
 Plugin 'lvht/tagbar-markdown'
 Plugin 'terryma/vim-multiple-cursors'
 Plugin 'SirVer/ultisnips'
-" Plugin 'honza/vim-snippets'
+Plugin 'honza/vim-snippets'
 Plugin 'dyng/ctrlsf.vim'
 Plugin 'Valloric/MatchTagAlways'
 
@@ -74,7 +74,8 @@ Plugin 'farconics/victionary'
 " chinese 排版
 Plugin 'hotoo/pangu.vim'
 
-" 
+Plugin 'suan/vim-instant-markdown'
+
 Plugin 'maxbrunsfeld/vim-yankstack'
 " All of your Plugins must be added before the following line
 call vundle#end()            " required  
@@ -456,8 +457,8 @@ autocmd FileType go nmap <silent> <leader>gr  <Plug>(go-run)
 " Run goimports when running gofmt
 let g:go_fmt_command = "goimports"
 
-" Set neosnippet as snippet engine
-let g:go_snippet_engine = "neosnippet"
+" Set ultisnips as snippet engine
+let g:go_snippet_engine = "ultisnips"
 
 " Enable syntax highlighting per default
 let g:go_highlight_types = 1
