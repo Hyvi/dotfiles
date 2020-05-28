@@ -1,6 +1,33 @@
 " vim: shiftwidth=4:tabstop=4:softtabstop=4 
-setlocal foldmethod=expr
+set foldmethod=expr
 setlocal foldexpr=GetGoFold(v:lnum)
+set foldtext=Gofoldtext()
+set fillchars= 
+" hi Folded ctermbg=white ctermfg=red
+" hi Folded xxx term=standout ctermfg=4 ctermbg=248 guifg=DarkBlue
+" hi Folded xxx term=standout ctermfg=4 ctermbg=248 guifg=DarkBlue guibg=LightGrey
+" hi! link Folded Normal
+
+function Gofoldtext() 
+    let line    = getline(v:foldstart)
+	let foldlen = v:foldend - v:foldstart + 1
+	let lines   = substitute(line, "[\ \t]*", '', '') . ' ' . foldlen . ' lines ... ' 
+	" if foldlen < 10
+    " let lines = ' ' . lines
+	" endif
+
+    let retval = ''
+    let i = 0
+    while i <  indent(v:foldstart)
+        let retval = retval . ' ' 
+        let i += 1
+    endwhile
+
+	" let retval = retval . v:folddashes . lines
+    let retval = retval . lines
+
+	return retval
+endfunction
 
 function! IndentLevel(lnum)
     return indent(a:lnum) / &shiftwidth
