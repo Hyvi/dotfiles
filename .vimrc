@@ -33,10 +33,10 @@ call vundle#begin()
 Plugin 'VundleVim/Vundle.vim'
 
 " theme
-" Plugin 'altercation/vim-colors-solarized'
+Plugin 'altercation/vim-colors-solarized'
 " Plugin 'dracula/vim'
 " Plugin 'tomasr/molokai'
-Plugin  'fatih/molokai'
+" Plugin  'fatih/molokai'
 " Plugin 'NLKNguyen/papercolor-theme'
  
 " edit
@@ -104,12 +104,16 @@ let g:vim_markdown_folding_disabled = 1
 "----------------------------------------------
 " Colors {{{ 
 "----------------------------------------------
-let g:rehash256 = 1
-let g:molokai_original = 1
 " colorscheme molokai
-" set background=dark
 " set background=light
-" colorscheme solarized
+if !has("gui_running")
+    let g:solarized_termtrans=1
+    " 成功解决tab背景问题
+    let g:solarized_visibility='low'
+    let g:solarized_termcolors=16
+endif
+set background=dark
+colorscheme solarized
 " color dracula
 " colorscheme PaperColor
 "  }}} 
@@ -134,7 +138,7 @@ set foldenable
 set foldmethod=indent             " syntax marker
 set foldlevel=20
 set list                          " show trailing whitespace
-set listchars=tab:\|\ ,trail:▫
+set listchars=tab:\ \ ,trail:▫
 
 " }}}
 
@@ -143,6 +147,9 @@ set listchars=tab:\|\ ,trail:▫
 "----------------------------------------------
 set hlsearch                      " disable search result highlighting
 set incsearch                     " move to match as you type the search query
+
+" This unsets the 'last search pattern' register by hitting return
+nnoremap <silent>  <CR> :noh<CR><CR>
 
 
 
