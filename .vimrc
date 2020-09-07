@@ -51,7 +51,6 @@ Plugin 'scrooloose/nerdcommenter'
 Plugin 'Valloric/YouCompleteMe' 
 Plugin 'wincent/command-t'
 Plugin 'majutsushi/tagbar'
-Plugin 'lvht/tagbar-markdown'
 Plugin 'terryma/vim-multiple-cursors'
 Plugin 'SirVer/ultisnips'
 Plugin 'honza/vim-snippets'
@@ -62,6 +61,9 @@ Plugin 'Valloric/MatchTagAlways'
 " Plugin 'posva/vim-vue'
 " md
 Plugin 'plasticboy/vim-markdown'
+Plugin 'suan/vim-instant-markdown'
+Plugin 'lvht/tagbar-markdown'
+Plugin 'masukomi/vim-markdown-folding'
 " git 
 Plugin 'airblade/vim-gitgutter'
 Plugin 'tpope/vim-fugitive'
@@ -76,7 +78,6 @@ Plugin 'farconics/victionary'
 " chinese 排版
 Plugin 'hotoo/pangu.vim'
 
-Plugin 'suan/vim-instant-markdown'
 
 Plugin 'maxbrunsfeld/vim-yankstack'
 " All of your Plugins must be added before the following line
@@ -249,7 +250,7 @@ let NERDTreeIgnore = ['\.pyc$']
 " }}} 
 
 " nerdtree-git-plugin 配置 {{{ 
-let g:NERDTreeIndicatorMapCustom = {
+let g:NERDTreeGitStatusIndicatorMapCustom = {
     \ "Modified"  : "✹",
     \ "Staged"    : "✚",
     \ "Untracked" : "✭",
@@ -465,6 +466,8 @@ autocmd FileType go nmap <silent> <leader>gr  <Plug>(go-run)
 
 " Run goimports when running gofmt
 let g:go_fmt_command = "goimports"
+
+let g:go_doc_popup_window = 1
 
 " Set ultisnips as snippet engine
 let g:go_snippet_engine = "ultisnips"
