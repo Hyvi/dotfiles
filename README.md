@@ -11,6 +11,12 @@ git clone https://github.com/Hyvi/vim-plugin.git
 ln -s vim-plugin/ftplugin ~/.vim/ftplugin
 ````
 
+## YouCompleteMe
+支持Golang代码完成
+```bash
+python3.7  install.py --go-completer
+```
+
 ## tagbar 
 
 ### lvht/tagbar-markdown

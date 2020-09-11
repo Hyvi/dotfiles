@@ -115,8 +115,8 @@ if !has("gui_running")
     let g:solarized_visibility='low'
     let g:solarized_termcolors=16
 endif
-set background=dark
-colorscheme solarized
+" set background=dark
+" colorscheme solarized
 " color dracula
 " colorscheme PaperColor
 "  }}} 
@@ -331,7 +331,7 @@ let g:CommandTWildIgnore=&wildignore . ",vendor"
 " 安装ctags 之后签列表子窗口才能出现
 
 let tagbar_right=1                      " 设置 tagbar 子窗口的位置出现在主编辑区的左边
-let tagbar_width=36                   " 设置标签子窗口的宽度
+let tagbar_width=56                   " 设置标签子窗口的宽度
 let g:tagbar_compact=1                 " tagbar 子窗口中不显示冗余帮助信息
 nnoremap <F8> :TagbarToggle<CR> " 设置显示／隐藏标签列表子窗口的快捷键。速记：identifier list by tag
 
@@ -481,9 +481,6 @@ let g:go_highlight_structs = 1
 let g:go_highlight_operators = 1
 let g:go_highlight_build_constraints = 1
 let g:go_highlight_extra_types = 1
-
-" Show type information
-" let g:go_auto_type_info = 1
 
 
 " Fix for location list when vim-go is used together with Syntastic
