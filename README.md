@@ -14,7 +14,7 @@ ln -s vim-plugin/ftplugin ~/.vim/ftplugin
 ## YouCompleteMe
 支持Golang代码完成
 ```bash
-python3.7  install.py --go-completer
+python3.7  install.py 
 ```
 
 ## tagbar 
