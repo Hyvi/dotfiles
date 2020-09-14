@@ -141,8 +141,11 @@ set foldenable
 set foldmethod=indent             " syntax marker
 set foldlevel=20
 set list                          " show trailing whitespace
-set listchars=tab:\ \ ,trail:▫
-
+set listchars=tab:\|\ ,trail:▫
+set nobackup                      " no backup files
+set noswapfile                    " no swap files
+set nowritebackup                 " only in case you don't want a backup file while editing
+set noundofile                    " no undo files
 " }}}
 
 "----------------------------------------------

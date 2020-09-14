@@ -12,7 +12,7 @@ ln -s vim-plugin/ftplugin ~/.vim/ftplugin
 ````
 
 ## YouCompleteMe
-支持Golang代码完成
+PS: 使用 vim-go 本身自动完成功能，支持Golang代码完成
 ```bash
 python3.7  install.py 
 ```
@@ -24,8 +24,8 @@ tagbar 本身支持 markdown, [ wiki markdown ](https://github.com/majutsushi/ta
 
 - tagbar-markdown 需要Php的支持. 
 
-## markdown
-### suan/vim-instant-markdown 
+## markdown 
+### suan/vim-instant-markdown  (已废弃)
 
 - 安装完node后，安装sudo npm -g install instant-markdown-d 
 
