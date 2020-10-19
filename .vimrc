@@ -22,7 +22,7 @@
 "
 " }}}
 let mapleader=";"
-filetype off                  " required
+" filetype off                  " required
 
 " Vundle Plugin {{{
 " set the runtime path to include Vundle and initialize
@@ -78,6 +78,7 @@ Plugin 'farconics/victionary'
 " chinese 排版
 Plugin 'hotoo/pangu.vim'
 
+" Plugin 'suan/vim-instant-markdown'
 
 Plugin 'maxbrunsfeld/vim-yankstack'
 " All of your Plugins must be added before the following line
@@ -95,7 +96,6 @@ filetype plugin indent on    " required
 "
 " syntax highlight
 
-filetype on
 syntax  on
 
 " see :h vundle for more details or wiki for FAQ
@@ -113,7 +113,7 @@ if !has("gui_running")
     let g:solarized_termtrans=1
     " 成功解决tab背景问题
     let g:solarized_visibility='low'
-    let g:solarized_termcolors=16
+    let g:solarized_termcolors=256
 endif
 " set background=dark
 " colorscheme solarized
@@ -132,16 +132,12 @@ set ruler
 set number
 " set cursorline
 " set cursorcolumn
-set expandtab
-set tabstop=2
-set shiftwidth=2
-set softtabstop=2
 set ignorecase
 set foldenable
 set foldmethod=indent             " syntax marker
 set foldlevel=20
 set list                          " show trailing whitespace
-set listchars=tab:\ \ ,trail:▫
+set listchars=tab:\|\ ,trail:▫
 
 " }}}
 
