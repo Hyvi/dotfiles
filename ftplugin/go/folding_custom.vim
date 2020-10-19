@@ -8,7 +8,7 @@ set fillchars=
 " hi Folded xxx term=standout ctermfg=4 ctermbg=248 guifg=DarkBlue guibg=LightGrey
 " hi! link Folded Normal
 
-function Gofoldtext() 
+function! Gofoldtext() 
     let line    = getline(v:foldstart)
 	let foldlen = v:foldend - v:foldstart + 1
 	let lines   = substitute(line, "[\ \t]*", '', '') . ' ' . foldlen . ' lines ... ' 
