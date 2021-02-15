@@ -49,7 +49,8 @@ Plugin 'scrooloose/nerdcommenter'
 " 随键而全的、支持模糊搜索的、高速补全的插件
 " YCM 由 google 公司搜索项目组的软件工程师 Strahinja Val Markovic 所开发
 Plugin 'Valloric/YouCompleteMe' 
-Plugin 'wincent/command-t'
+" Plugin 'wincent/command-t'
+Plugin 'ctrlpvim/ctrlp.vim'
 Plugin 'majutsushi/tagbar'
 Plugin 'terryma/vim-multiple-cursors'
 Plugin 'SirVer/ultisnips'
