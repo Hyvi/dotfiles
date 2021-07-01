@@ -82,6 +82,11 @@ Plugin 'hotoo/pangu.vim'
 " Plugin 'suan/vim-instant-markdown'
 
 Plugin 'maxbrunsfeld/vim-yankstack'
+
+" Mark command to highlight several words in different colors simultaneously
+Plugin 'inkarkat/vim-ingo-library'
+Plugin 'inkarkat/vim-mark'
+
 " All of your Plugins must be added before the following line
 call vundle#end()            " required  
 " }}} 
