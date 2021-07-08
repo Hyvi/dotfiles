@@ -3,6 +3,11 @@ vim配置,持续更新
 # Install 
 子标题为各个插件的安装注意项。 
 
+## vundle 安装
+```bash 
+git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim
+```
+
 ##  ftplugin
 目录下是各种文件类型的配置, 安装方式如下
 ```bash 
