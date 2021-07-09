@@ -34,7 +34,7 @@ tagbar 本身支持 markdown, [ wiki markdown ](https://github.com/majutsushi/ta
 # zshrc
 记录 zsh + oh-my-zsh 的安装和使用
 
-## zsh compinit / compaudit 
+## zsh completion(compinit / compaudit)
 
 > zsh compinit: insecure directories, run compaudit for list.  Ignore insecure directories and continue [y] or abort compinit [n]? y
 
@@ -44,6 +44,10 @@ tagbar 本身支持 markdown, [ wiki markdown ](https://github.com/majutsushi/ta
 sudo chmod -R 755 /usr/local/share/zsh
 sudo chown -R root:staff /usr/local/share/zsh
 ```
+
+## zsh-autosuggestions
+[https://github.com/zsh-users/zsh-autosuggestions#usage] 
+
 
 # 参考
 
