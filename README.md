@@ -1,6 +1,6 @@
 vim配置,持续更新
 
-# Install 
+# Vim Install 
 子标题为各个插件的安装注意项。 
 
 ## vundle 安装
@@ -29,10 +29,21 @@ tagbar 本身支持 markdown, [ wiki markdown ](https://github.com/majutsushi/ta
 
 - tagbar-markdown 需要Php的支持. 
 
-## markdown 
-### suan/vim-instant-markdown  (已废弃)
 
-- 安装完node后，安装sudo npm -g install instant-markdown-d 
+
+# zshrc
+记录 zsh + oh-my-zsh 的安装和使用
+
+## zsh compinit / compaudit 
+
+> zsh compinit: insecure directories, run compaudit for list.  Ignore insecure directories and continue [y] or abort compinit [n]? y
+
+[https://stackoverflow.com/questions/13762280/zsh-compinit-insecure-directories]  
+
+```bash 
+sudo chmod -R 755 /usr/local/share/zsh
+sudo chown -R root:staff /usr/local/share/zsh
+```
 
 # 参考
 

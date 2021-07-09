@@ -65,7 +65,8 @@ Plugin 'Valloric/MatchTagAlways'
 " Plugin 'posva/vim-vue'
 " md
 Plugin 'plasticboy/vim-markdown'
-Plugin 'suan/vim-instant-markdown'
+" 原因： 实时预览还是很少用到
+" Plugin 'suan/vim-instant-markdown'
 Plugin 'lvht/tagbar-markdown'
 Plugin 'masukomi/vim-markdown-folding'
 " git 
