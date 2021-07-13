@@ -48,7 +48,7 @@ Plugin 'Xuyuanp/nerdtree-git-plugin'
 Plugin 'scrooloose/nerdcommenter'
 " 随键而全的、支持模糊搜索的、高速补全的插件
 " YCM 由 google 公司搜索项目组的软件工程师 Strahinja Val Markovic 所开发
-Plugin 'Valloric/YouCompleteMe' 
+" Plugin 'Valloric/YouCompleteMe' 
 
 " 检索文件， 类似 IDE 的 Command + p
 " Plugin 'wincent/command-t'
@@ -172,12 +172,15 @@ au BufReadPost * if line("'\"") > 0|if line("'\"") <= line("$")|exe("norm '\"")|
 
 " 恢复fold状态
 " https://stackoverflow.com/questions/37552913/vim-how-to-keep-folds-on-save 
-augroup remember_folds
+augroup AutoSaveGroup
   autocmd!
-  autocmd BufWinLeave * mkview
-  autocmd BufWinEnter * silent! loadview
-augroup END
-
+  " view files are about 500 bytes
+  " bufleave but not bufwinleave captures closing 2nd tab
+  " nested is needed by bufwrite* (if triggered via other autocmd)
+  " BufHidden for compatibility with `set hidden`
+  autocmd BufWinLeave,BufLeave,BufWritePost,BufHidden,QuitPre ?* nested silent! mkview!
+  autocmd BufWinEnter ?* silent! loadview
+augroup end
 
 vnoremap <Leader>y "+y            " 设置快捷键将选中文本块复制至系统剪贴板
 nnoremap <Leader>p "+p            " 设置快捷键将系统剪贴板内容粘贴至vim
@@ -189,12 +192,12 @@ nnoremap <Leader>Q :qa!<CR>       " 不做任何保存，直接退出 vim
 
 " 设置快捷键遍历子窗口
 " nnoremap nw <C-W><C-W>        " 依次遍历,这样设置影响·n·跳转到下一个的速度
-nnoremap <Leader>lw <C-W>l    " 跳转至右方的窗口
-nnoremap <Leader>hw <C-W>h    " 跳转至方的窗口
-nnoremap <Leader>kw <C-W>k    " 跳转至上方的子窗口
-nnoremap <Leader>jw <C-W>j    " 跳转至下方的子窗口
+nnoremap <C-L> <C-W>l    " 跳转至右方的窗口
+nnoremap <C-H> <C-W>h    " 跳转至方的窗口
+nnoremap <C-K> <C-W>k    " 跳转至上方的子窗口
+nnoremap <c-J> <C-W>j    " 跳转至下方的子窗口
 
-nmap <Leader>M %              " 定义快捷键在结对符之间跳转
+"  nmap <Leader>M %              " 定义快捷键在结对符之间跳转
 
 
 
@@ -467,6 +470,7 @@ au FileType go nmap <leader>gc <Plug>(go-coverage-toggle)
 au FileType go nmap <leader>v <Plug>(go-def-vertical)
 au FileType go nmap <leader>h <Plug>(go-def-split)
 au FileType go nmap <leader>x <Plug>(go-doc-vertical)
+au FileType go nmap <leader>r <Plug>(go-referrers)
 autocmd FileType go nmap <silent> <Leader>gd <Plug>(go-def-tab)
 " GoMetaLinter 后面必须跟上path， 目前没有获取当前文件名的当时。先取消此快捷键
 " au FileType go nmap <silent> <leader>l :GoMetaLinter <CR>
