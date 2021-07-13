@@ -4,7 +4,9 @@
 # bash读取的配置文件：~/.bash_profile文件
 # zsh读取的配置文件：~/.zshrc文件
 # 当从bash切换为zsh时，如果不想重新配置一遍.zshrc文件，可以在.zshrc文件中加上source ~/.bash_profile;直接从.bash_profile文件读取配置。
-source $HOME/.bashrc
+if [ -f $HOME/.bashrc ]; then 
+  source $HOME/.bashrc
+fi
 
 # Path to your oh-my-zsh installation.
 export ZSH=$HOME/.oh-my-zsh
@@ -106,11 +108,9 @@ export LC_ALL=en_US.UTF-8
 #
 export PATH="/usr/local/opt/libpcap/bin:$PATH"
 
-# 设置rbenv
-export RUBY_CONFIGURE_OPTS="--with-openssl-dir=$(brew --prefix openssl@1.1)"
-
-
-eval "$(rbenv init -)"
+# 设置rbenv (没有使用了，所以注释掉）
+# export RUBY_CONFIGURE_OPTS="--with-openssl-dir=$(brew --prefix openssl@1.1)"
+# eval "$(rbenv init -)"
 
 # 兼容 bash completion 下的自动完成脚本， 在 $ZSH/oh-my-zsh.sh 文件中已经存在
 # https://github.com/spf13/cobra/blob/master/shell_completions.md 
