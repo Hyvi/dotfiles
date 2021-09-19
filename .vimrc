@@ -350,8 +350,6 @@ nnoremap <F8> :TagbarToggle<CR> " 设置显示／隐藏标签列表子窗口的�
 " markdown disable sort 
 let g:tagbar_sort = 0
 
-"  tagbar-autoopen  for specific filetypes go\md
-autocmd FileType go,markdown nested :TagbarOpen
 " }}}
 
 " 查找 ctrlsf.vim {{{ 
