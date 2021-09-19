@@ -35,11 +35,7 @@ call vundle#begin()
 Plugin 'VundleVim/Vundle.vim'
 
 " theme
-Plugin 'altercation/vim-colors-solarized'
-" Plugin 'dracula/vim'
-" Plugin 'tomasr/molokai'
-" Plugin  'fatih/molokai'
-" Plugin 'NLKNguyen/papercolor-theme'
+Plugin 'KeitaNakamura/neodark.vim'
  
 " edit
 Plugin 'godlygeek/tabular'
@@ -51,7 +47,6 @@ Plugin 'scrooloose/nerdcommenter'
 " Plugin 'Valloric/YouCompleteMe' 
 
 " 检索文件， 类似 IDE 的 Command + p
-" Plugin 'wincent/command-t'
 Plugin 'ctrlpvim/ctrlp.vim'
 
 Plugin 'majutsushi/tagbar'
@@ -61,8 +56,6 @@ Plugin 'honza/vim-snippets'
 Plugin 'dyng/ctrlsf.vim'
 Plugin 'Valloric/MatchTagAlways'
 
-" vue
-" Plugin 'posva/vim-vue'
 " md
 Plugin 'plasticboy/vim-markdown'
 " 原因： 实时预览还是很少用到
@@ -82,8 +75,6 @@ Plugin 'farconics/victionary'
 
 " chinese 排版
 Plugin 'hotoo/pangu.vim'
-
-" Plugin 'suan/vim-instant-markdown'
 
 Plugin 'maxbrunsfeld/vim-yankstack'
 
@@ -116,18 +107,8 @@ let g:vim_markdown_folding_disabled = 1
 "----------------------------------------------
 " Colors {{{ 
 "----------------------------------------------
-" colorscheme molokai
-" set background=light
-if !has("gui_running")
-    let g:solarized_termtrans=1
-    " 成功解决tab背景问题
-    let g:solarized_visibility='low'
-    let g:solarized_termcolors=256
-endif
-" set background=dark
-" colorscheme solarized
-" color dracula
-" colorscheme PaperColor
+set background=dark
+colorscheme neodark
 "  }}} 
 
 "----------------------------------------------
