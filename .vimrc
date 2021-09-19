@@ -1,19 +1,19 @@
-" how to configure vim {{{ 
+" how to configure vim {{{
 " # 上面插件安装完成之后执行下面内容
 " # command-t 文件搜索插件安装
-" $ cd ~/.vim/bundle/command-t 
+" $ cd ~/.vim/bundle/command-t
 " $ rake make
-" 
+"
 " # 搜索文本内容工具
 " # 需要安装 CtrlSF的依赖ripgrep
 " $ brew install ripgrep
-" 
+"
 " # 代码提示插件也需要你运行安装哦，不然没有效果嘞
 " $ cd ~/.vim/plugged/YouCompleteMe
 " $ ./install.py
 " # or 新版脚本过时了，推荐上面脚本
-" $ ./install.sh 
-" 
+" $ ./install.sh
+"
 " # 需要安装ctags 不然配置没效果哦
 " # ctags for Mac
 " $ brew install ctags
@@ -36,7 +36,7 @@ Plugin 'VundleVim/Vundle.vim'
 
 " theme
 Plugin 'KeitaNakamura/neodark.vim'
- 
+
 " edit
 Plugin 'godlygeek/tabular'
 Plugin 'scrooloose/nerdtree'
@@ -44,7 +44,7 @@ Plugin 'Xuyuanp/nerdtree-git-plugin'
 Plugin 'scrooloose/nerdcommenter'
 " 随键而全的、支持模糊搜索的、高速补全的插件
 " YCM 由 google 公司搜索项目组的软件工程师 Strahinja Val Markovic 所开发
-" Plugin 'Valloric/YouCompleteMe' 
+" Plugin 'Valloric/YouCompleteMe'
 
 " 检索文件， 类似 IDE 的 Command + p
 Plugin 'ctrlpvim/ctrlp.vim'
@@ -62,10 +62,10 @@ Plugin 'plasticboy/vim-markdown'
 " Plugin 'suan/vim-instant-markdown'
 Plugin 'lvht/tagbar-markdown'
 Plugin 'masukomi/vim-markdown-folding'
-" git 
+" git
 Plugin 'airblade/vim-gitgutter'
 Plugin 'tpope/vim-fugitive'
-" go 
+" go
 Plugin 'fatih/vim-go'
 " check
 Plugin 'vim-syntastic/syntastic'
@@ -81,9 +81,12 @@ Plugin 'maxbrunsfeld/vim-yankstack'
 " Mark command to highlight several words in different colors simultaneously
 Plugin 'vim-scripts/Mark'
 
+" window
+Plugin 'wellle/visual-split.vim'
+
 " All of your Plugins must be added before the following line
-call vundle#end()            " required  
-" }}} 
+call vundle#end()            " required
+" }}}
 filetype plugin indent on    " required
 " To ignore plugin indent changes, instead use:
 "filetype plugin on
@@ -105,14 +108,14 @@ let g:vim_markdown_folding_disabled = 1
 
 
 "----------------------------------------------
-" Colors {{{ 
+" Colors {{{
 "----------------------------------------------
 set background=dark
 colorscheme neodark
-"  }}} 
+"  }}}
 
 "----------------------------------------------
-" General settings {{{ 
+" General settings {{{
 "----------------------------------------------
 set nocompatible                  " be iMproved, required
 set backspace=indent,eol,start
@@ -148,10 +151,10 @@ nnoremap <silent>  <CR> :noh<CR><CR>
 
 " 恢复上次文件打开位置
 set viminfo='10,\"100,:20,%,n~/.viminfo
-au BufReadPost * if line("'\"") > 0|if line("'\"") <= line("$")|exe("norm '\"")|else|exe "norm $"|endif|endif 
+au BufReadPost * if line("'\"") > 0|if line("'\"") <= line("$")|exe("norm '\"")|else|exe "norm $"|endif|endif
 
 " 恢复fold状态
-" https://stackoverflow.com/questions/37552913/vim-how-to-keep-folds-on-save 
+" https://stackoverflow.com/questions/37552913/vim-how-to-keep-folds-on-save
 augroup AutoSaveGroup
   autocmd!
   " view files are about 500 bytes
@@ -181,7 +184,7 @@ nnoremap <c-J> <C-W>j    " 跳转至下方的子窗口
 
 
 
-" 快速开关注释 {{{ 
+" 快速开关注释 {{{
 " Plug 'scrooloose/nerdcommenter'
 
 " 在注释符默认添加空格
@@ -199,10 +202,10 @@ let g:NERDCommentEmptyLines = 1
 " 启用时修整尾随空格注释
 let g:NERDTrimTrailingWhitespace = 1
 
-" }}}  
+" }}}
 
 
-" 工程文件浏览 {{{ 
+" 工程文件浏览 {{{
 
 " 查看工程文件列表
 " Plug 'scrooloose/nerdtree'
@@ -240,9 +243,9 @@ let NERDTreeMinimalUI=1
 let NERDTreeAutoDeleteBuffer=1
 " 根据后缀隐藏文件
 let NERDTreeIgnore = ['\.pyc$']
-" }}} 
+" }}}
 
-" nerdtree-git-plugin 配置 {{{ 
+" nerdtree-git-plugin 配置 {{{
 let g:NERDTreeGitStatusIndicatorMapCustom = {
     \ "Modified"  : "✹",
     \ "Staged"    : "✚",
@@ -257,7 +260,7 @@ let g:NERDTreeGitStatusIndicatorMapCustom = {
     \ }
 " }}}
 
-" YCM 补全 {{{ 
+" YCM 补全 {{{
 
 " 随键而全的、支持模糊搜索的、高速补全的插件
 " YCM 由 google 公司搜索项目组的软件工程师 Strahinja Val Markovic 所开发
@@ -312,11 +315,11 @@ nnoremap <leader>gg :YcmCompleter GoToDefinitionElseDeclaration<CR>
 " }}}
 
 " command-t 文件检索 {{{
-" supplement rather than replace the global setting(Vim's global 'wildignore' setting 
+" supplement rather than replace the global setting(Vim's global 'wildignore' setting
 let g:CommandTWildIgnore=&wildignore . ",vendor"
 " }}}
 
-" 标签列表 {{{ 
+" 标签列表 {{{
 
 " Plug 'majutsushi/tagbar'
 " 基于标签的标识符列表插件
@@ -328,18 +331,18 @@ let tagbar_width=56                   " 设置标签子窗口的宽度
 let g:tagbar_compact=1                 " tagbar 子窗口中不显示冗余帮助信息
 nnoremap <F8> :TagbarToggle<CR> " 设置显示／隐藏标签列表子窗口的快捷键。速记：identifier list by tag
 
-" markdown disable sort 
+" markdown disable sort
 let g:tagbar_sort = 0
 
 " }}}
 
-" 查找 ctrlsf.vim {{{ 
+" 查找 ctrlsf.vim {{{
 
 " 上下文插件，例如搜素到关键字，中间缩略，展示一段上下文
 " Plug 'dyng/ctrlsf.vim'
 " 使用 ctrlsf.vim 插件在工程内全局查找光标所在关键字，设置快捷键。
 " 快捷键速记法：search in project
-let g:ctrlsf_ackprg = 'rg' 
+let g:ctrlsf_ackprg = 'rg'
 nnoremap <Leader>sp :CtrlSF<CR>
 " 选中搜索 - 文本中选中关键字
 vmap     <Leader>sp <Plug>CtrlSFVwordPath
@@ -362,10 +365,10 @@ let g:ctrlsf_auto_focus = {
 let g:ctrlsf_default_root = 'project'
 " 被搜索忽略的目录(directories that will be ignore by default)
 let g:ctrlsf_ignore_dir = ['vendor']
-" }}} 
+" }}}
 
 
-"vim-snippets / UltiSnip {{{ 
+"vim-snippets / UltiSnip {{{
 
 " Trigger configuration. Do not use <tab> if you use https://github.com/Valloric/YouCompleteMe.
 
@@ -379,7 +382,7 @@ let g:UltiSnipsEditSplit="vertical"
 " }}}
 
 
-" Valloric/MatchTagAlways {{{ 
+" Valloric/MatchTagAlways {{{
 
 " This option holds all the filetypes for which this plugin will try to find and highlight enclosing tags.
 let g:mta_filetypes = {
@@ -392,9 +395,9 @@ let g:mta_filetypes = {
 "  Jumps to the enclosing tag if the tag is visible
 nnoremap <leader>% :MtaJumpToOtherTag<cr>
 
-"}}} 
+"}}}
 
-" GitGutter {{{ 
+" GitGutter {{{
 
 let g:gitgutter_escape_grep = 1
 highlight GitGutterAdd ctermbg=Green
@@ -403,12 +406,13 @@ highlight GitGutterChange ctermbg=Yellow
 let g:gitgutter_grep=''
 let g:gitgutter_terminal_reports_focus=0
 set updatetime=100
+let g:gitgutter_set_sign_backgrounds = 1
 nmap [h <Plug>GitGutterPrevHunk
 nmap ]h <Plug>GitGutterNextHunk
 
 " }}}
 
-" Syntastic {{{ 
+" Syntastic {{{
 " Syntastic Recommended settings
 " set statusline+=%#warningmsg#
 " set statusline+=%{SyntasticStatuslineFlag()}
@@ -480,8 +484,8 @@ let g:go_highlight_extra_types = 1
 " let g:go_list_type_commands = {"GoMetaLinter": "locationlist"}
 
 " gometalinter configuration
-" 当升级golang版本时，需要重新rebuild golangci-lint， 执行如下命令  
-" GO111MODULE=off go get  -u github.com/golangci/golangci-lint/cmd/golangci-lint 
+" 当升级golang版本时，需要重新rebuild golangci-lint， 执行如下命令
+" GO111MODULE=off go get  -u github.com/golangci/golangci-lint/cmd/golangci-lint
 let g:go_metalinter_command = "golangci-lint"
 let g:go_metalinter_deadline = "15s"
 
@@ -516,16 +520,16 @@ let g:go_metalinter_autosave_enabled = [
 let g:go_addtags_transform = "snakecase"
 let g:go_metalinter_autosave = 1
 " by default guru is being used as it covers all edge cases, But one might
-" also use godef as it's faster 
-" Guru isn't aware of modules 
+" also use godef as it's faster
+" Guru isn't aware of modules
 let g:go_def_mode = 'gopls'
 
 " Identifier highlighting
-" https://github.com/fatih/vim-go/wiki/Tutorial#identifier-highlighting 
+" https://github.com/fatih/vim-go/wiki/Tutorial#identifier-highlighting
 " 提示错误
 " let g:go_auto_sameids = 1
 
-" Identifier resolution 
+" Identifier resolution
 " https://github.com/fatih/vim-go/wiki/Tutorial#identifier-resolution
 " 与错误提示冲突了，so 不启用改功能
 " let g:go_auto_type_info = 1
@@ -542,7 +546,7 @@ au FileType python set tabstop=4
 " }}}
 
 "----------------------------------------------
-" Language: YAML {{{ 
+" Language: YAML {{{
 "----------------------------------------------
 au! BufNewFile,BufReadPost *.{yaml,yml} set filetype=yaml foldmethod=indent
 autocmd FileType yaml setlocal ts=2 sts=2 sw=2 expandtab
@@ -551,16 +555,87 @@ autocmd FileType yaml setlocal ts=2 sts=2 sw=2 expandtab
 
 
 "----------------------------------------------
-" farconics/victionary: a dictionary plugin for vim  {{{ 
+" farconics/victionary: a dictionary plugin for vim  {{{
 "----------------------------------------------
 let g:victionary#dictionary = "gcide"
 let g:victionary#map_defaults = 0
 nmap <Leader>d <Plug>(victionary#define_under_cursor)
 " }}}
 
-" vim-yankstack {{{ 
-" ref: https://www.0value.com/my-go-centric-vim-setup 
+" vim-yankstack {{{
+" ref: https://www.0value.com/my-go-centric-vim-setup
 nmap <leader>p <Plug>yankstack_substitute_older_paste
 nmap <leader>P <Plug>yankstack_substitute_newer_paste
 " }}}
+
+"----------------------------------------------
+" statusline  {{{
+"----------------------------------------------
+
+set statusline=%f
+
+hi clear StatusLine
+hi clear StatusLineNC
+hi StatusLine   term=bold cterm=bold ctermfg=White ctermbg=235
+hi StatusLineNC term=bold cterm=bold ctermfg=White ctermbg=235
+
+" 给 statusline 增加字体颜色，不知道原理
+" highlight values in terminal vim, colorscheme solarized
+hi User1                      ctermfg=4          guifg=#40ffff            " Identifier
+hi User2                      ctermfg=2 gui=bold guifg=#ffff60            " Statement
+hi User3 term=bold cterm=bold ctermfg=1          guifg=White   guibg=Red  " Error
+hi User4                      ctermfg=1          guifg=Orange             " Special
+hi User5                      ctermfg=10         guifg=#80a0ff            " Comment
+hi User6 term=bold cterm=bold ctermfg=1          guifg=Red                " WarningMsg
+
+
+function! WindowNumber()
+  return tabpagewinnr(tabpagenr())
+endfunction
+
+function! TrailingSpaceWarning()
+  if !exists("b:statusline_trailing_space_warning")
+    let lineno = search('\s$', 'nw')
+    if lineno != 0
+      let b:statusline_trailing_space_warning = '[trailing:'.lineno.']'
+    else
+      let b:statusline_trailing_space_warning = ''
+    endif
+  endif
+  return b:statusline_trailing_space_warning
+endfunction
+
+" recalculate when idle, and after saving
+augroup statusline_trail
+  autocmd!
+  autocmd CursorHold,BufWritePost * unlet! b:statusline_trailing_space_warning
+augroup END
+
+set statusline=
+set statusline+=%6*%m%r%*                          " modified, readonly
+set statusline+=\ 
+set statusline+=%5*%{expand('%:h')}/               " relative path to file's directory
+set statusline+=%1*%t%*                            " file name
+set statusline+=\ 
+set statusline+=\ 
+set statusline+=%3*%{TrailingSpaceWarning()}%*     " trailing whitespace
+
+" set statusline+=\ 
+" set statusline+=%{kite#statusline()}
+
+set statusline+=%=                                 " switch to RHS
+
+set statusline+=%5*%{empty(&titlestring)?'':&titlestring}%*
+set statusline+=\ 
+set statusline+=%{exists('*CapsLockStatusline')?CapsLockStatusline():''}
+set statusline+=\ 
+set statusline+=\ 
+set statusline+=%5*%L\ lines%*                     " number of lines
+set statusline+=\ 
+set statusline+=\ 
+set statusline+=\ 
+set statusline+=%2*%-2.2{WindowNumber()}%*         " window number
+" }}}
+
+
 " vim: foldmethod=marker
