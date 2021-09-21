@@ -407,8 +407,12 @@ let g:gitgutter_grep=''
 let g:gitgutter_terminal_reports_focus=0
 set updatetime=100
 let g:gitgutter_set_sign_backgrounds = 1
-nmap [h <Plug>GitGutterPrevHunk
-nmap ]h <Plug>GitGutterNextHunk
+nmap [h <Plug>(GitGutterPrevHunk)
+nmap ]h <Plug>(GitGutterNextHunk)
+nmap ghs <Plug>(GitGutterStageHunk)
+nmap ghu <Plug>(GitGutterUndoHunk)
+nmap ghp <Plug>(GitGutterPreviewHunk)
+
 
 " }}}
 
