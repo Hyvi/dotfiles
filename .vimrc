@@ -433,7 +433,7 @@ let g:syntastic_python_checkers = ['pylint']
 let g:syntastic_go_checkers = ['gometalinter']
 " both 'vim-go' and syntastic run systax checks by default when you save
 " buffers to disk.  Then set passive mode in syntastic for "go" filetypes
-let g:syntastic_mode_map = { 'mode': 'active', 'passive_filetypes': ['go'] }
+let g:syntastic_mode_map = { 'mode': 'passive','active_filetypes': ['python'] }
 
 " }}}
 
