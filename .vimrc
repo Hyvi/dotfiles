@@ -1,9 +1,6 @@
 " how to configure vim {{{
 " # 上面插件安装完成之后执行下面内容
-" # command-t 文件搜索插件安装
-" $ cd ~/.vim/bundle/command-t
-" $ rake make
-"
+
 " # 搜索文本内容工具
 " # 需要安装 CtrlSF的依赖ripgrep
 " $ brew install ripgrep
