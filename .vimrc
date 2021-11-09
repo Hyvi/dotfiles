@@ -131,7 +131,7 @@ set number
 " set cursorcolumn
 set ignorecase
 set foldenable
-set foldmethod=indent             " syntax marker
+set foldmethod=syntax            " syntax marker
 set foldlevel=20
 set list                          " show trailing whitespace
 set listchars=tab:\|\ ,trail:▫
@@ -657,7 +657,16 @@ let g:vrc_auto_format_response_patterns = {
   \ 'xml': 'xmllint --format -',
 \}
 
-" let g:vrc_output_buffer_name = '__VRC_OUTPUT.json'
+" 设置 curl normal options
+let g:vrc_curl_opts = {
+  \ '--connect-timeout' : 10,
+  \ '-L': '',
+  \ '-i': '',
+  \ '--max-time': 60,
+  \ '--ipv4': '',
+  \ '-k': '',
+  \ '-s': '',
+\}
 " }}}
 
 " vim: foldmethod=marker
