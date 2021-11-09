@@ -29,6 +29,17 @@ tagbar 本身支持 markdown, [ wiki markdown ](https://github.com/majutsushi/ta
 
 - tagbar-markdown 需要 Php 的支持。
 
+## vim-rest-console
+默认使用 python -m json.tool 来格式，存在以下问题：
+
+- 格式化不如 jq 好看
+- 不支持中文，将中文转化 unicode 码
+
+这里通过配置 `vrc_auto_format_response_patterns` 来使用 `jq` 来格式化。在 Mac 下执行以下命令安装 jq: 
+
+```bash
+brew install jq
+```
 
 
 # Zshrc

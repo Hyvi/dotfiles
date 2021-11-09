@@ -84,6 +84,10 @@ Plugin 'vim-scripts/Mark'
 " window
 Plugin 'wellle/visual-split.vim'
 
+Plugin 'diepm/vim-rest-console'
+
+Plugin 'elzr/vim-json'
+
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
 " }}}
@@ -641,5 +645,19 @@ set statusline+=\
 set statusline+=%2*%-2.2{WindowNumber()}%*         " window number
 " }}}
 
+"----------------------------------------------
+" vim-rest-console  {{{
+"----------------------------------------------
+let g:vrc_response_default_content_type = 'application/json'
+
+" json 格式化使用 jq cli，需要提前安装 
+" In Mac, run "brew install jq"
+let g:vrc_auto_format_response_patterns = {
+  \ 'json': 'jq .',
+  \ 'xml': 'xmllint --format -',
+\}
+
+" let g:vrc_output_buffer_name = '__VRC_OUTPUT.json'
+" }}}
 
 " vim: foldmethod=marker
