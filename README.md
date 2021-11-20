@@ -41,6 +41,10 @@ tagbar 本身支持 markdown, [ wiki markdown ](https://github.com/majutsushi/ta
 brew install jq
 ```
 
+## lightline.vim
+A light and configurable statusline/tabline plugin for Vim
+
+结合主题 Challenger Deep Theme for VIM 使用。
 
 # Zshrc
 记录 zsh + oh-my-zsh 的安装和使用
@@ -65,6 +69,7 @@ sudo chown -R root:staff /usr/local/share/zsh
 ## Colorscheme 设置
 参考 airblade vim 的设置，更改 Vim 的 colorscheme 为 NeoDark 黑色主题，为了保持 Iterm 2 的主题和 Vim 一致， 使用 [NeoDark.itermcolors](https://github.com/KeitaNakamura/neodark.vim/blob/master/terms/NeoDark.itermcolors) 修改 Iterm 2 的主题。
 
+Challenger Deep Theme for VIM, 切换到颜色突出的主题
 # 参考
 
 [ sebdah's nvim configuratio ](https://github.com/sebdah/dotfiles/blob/ab2c2357a6853a29010762a45610b2ab31c71eb5/config/nvim/init.vim)

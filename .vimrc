@@ -35,7 +35,7 @@ call vundle#begin()
 Plugin 'VundleVim/Vundle.vim'
 
 " theme
-Plugin 'KeitaNakamura/neodark.vim'
+Plugin 'challenger-deep-theme/vim', {'name': 'challenger-deep-theme'}
 
 " edit
 Plugin 'godlygeek/tabular'
@@ -84,9 +84,16 @@ Plugin 'vim-scripts/Mark'
 " window
 Plugin 'wellle/visual-split.vim'
 
+" Json
 Plugin 'diepm/vim-rest-console'
 
 Plugin 'elzr/vim-json'
+
+" syntax highlight
+Plugin 'sheerun/vim-polyglot'
+
+" statusline 
+ Plugin 'itchyny/lightline.vim'
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
@@ -114,8 +121,11 @@ let g:vim_markdown_folding_disabled = 1
 "----------------------------------------------
 " Colors {{{
 "----------------------------------------------
-set background=dark
-colorscheme neodark
+colorscheme challenger_deep
+
+if has('nvim') || has('termguicolors')
+  set termguicolors
+endif
 "  }}}
 
 "----------------------------------------------
@@ -579,70 +589,17 @@ nmap <leader>P <Plug>yankstack_substitute_newer_paste
 "----------------------------------------------
 " statusline  {{{
 "----------------------------------------------
+let g:lightline = {
+      \ 'colorscheme': 'challenger_deep',
+      \ 'active': {
+      \   'left': [ [ 'mode', 'paste' ],
+      \             [ 'gitbranch', 'readonly', 'filename', 'modified' ] ]
+      \ },
+      \ 'component_function': {
+      \   'gitbranch': 'FugitiveHead'
+      \ },
+      \ }
 
-set statusline=%f
-
-hi clear StatusLine
-hi clear StatusLineNC
-hi StatusLine   term=bold cterm=bold ctermfg=White ctermbg=235
-hi StatusLineNC term=bold cterm=bold ctermfg=White ctermbg=235
-
-" 给 statusline 增加字体颜色，不知道原理
-" highlight values in terminal vim, colorscheme solarized
-hi User1                      ctermfg=4          guifg=#40ffff            " Identifier
-hi User2                      ctermfg=2 gui=bold guifg=#ffff60            " Statement
-hi User3 term=bold cterm=bold ctermfg=1          guifg=White   guibg=Red  " Error
-hi User4                      ctermfg=1          guifg=Orange             " Special
-hi User5                      ctermfg=10         guifg=#80a0ff            " Comment
-hi User6 term=bold cterm=bold ctermfg=1          guifg=Red                " WarningMsg
-
-
-function! WindowNumber()
-  return tabpagewinnr(tabpagenr())
-endfunction
-
-function! TrailingSpaceWarning()
-  if !exists("b:statusline_trailing_space_warning")
-    let lineno = search('\s$', 'nw')
-    if lineno != 0
-      let b:statusline_trailing_space_warning = '[trailing:'.lineno.']'
-    else
-      let b:statusline_trailing_space_warning = ''
-    endif
-  endif
-  return b:statusline_trailing_space_warning
-endfunction
-
-" recalculate when idle, and after saving
-augroup statusline_trail
-  autocmd!
-  autocmd CursorHold,BufWritePost * unlet! b:statusline_trailing_space_warning
-augroup END
-
-set statusline=
-set statusline+=%6*%m%r%*                          " modified, readonly
-set statusline+=\ 
-set statusline+=%5*%{expand('%:h')}/               " relative path to file's directory
-set statusline+=%1*%t%*                            " file name
-set statusline+=\ 
-set statusline+=\ 
-set statusline+=%3*%{TrailingSpaceWarning()}%*     " trailing whitespace
-
-" set statusline+=\ 
-" set statusline+=%{kite#statusline()}
-
-set statusline+=%=                                 " switch to RHS
-
-set statusline+=%5*%{empty(&titlestring)?'':&titlestring}%*
-set statusline+=\ 
-set statusline+=%{exists('*CapsLockStatusline')?CapsLockStatusline():''}
-set statusline+=\ 
-set statusline+=\ 
-set statusline+=%5*%L\ lines%*                     " number of lines
-set statusline+=\ 
-set statusline+=\ 
-set statusline+=\ 
-set statusline+=%2*%-2.2{WindowNumber()}%*         " window number
 " }}}
 
 "----------------------------------------------
