@@ -67,9 +67,6 @@ Plugin 'fatih/vim-go'
 " check
 Plugin 'vim-syntastic/syntastic'
 
-"eng dict
-Plugin 'farconics/victionary'
-
 " chinese 排版
 Plugin 'hotoo/pangu.vim'
 
@@ -570,11 +567,15 @@ autocmd FileType yaml setlocal ts=2 sts=2 sw=2 expandtab
 
 
 "----------------------------------------------
-" farconics/victionary: a dictionary plugin for vim  {{{
+" Dictionary: a dictionary plugin for vim  {{{
 "----------------------------------------------
-let g:victionary#dictionary = "gcide"
-let g:victionary#map_defaults = 0
-nmap <Leader>d <Plug>(victionary#define_under_cursor)
+nmap <leader>d :call Longman()<CR>
+fun! Longman()
+    let keyword = expand("<cword>")
+    let url = "https://www.ldoceonline.com/dictionary/" . keyword
+    let path = "/Applications/Google\\ Chrome.app"
+    silent exec "!open -a ".path." '".url."'" | redraw!
+endfun
 " }}}
 
 " vim-yankstack {{{
