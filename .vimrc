@@ -568,6 +568,7 @@ autocmd FileType yaml setlocal ts=2 sts=2 sw=2 expandtab
 
 "----------------------------------------------
 " Dictionary: a dictionary plugin for vim  {{{
+" https://www.antimoon.com/
 "----------------------------------------------
 nmap <leader>d :call Longman()<CR>
 fun! Longman()
