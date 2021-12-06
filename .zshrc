@@ -115,3 +115,6 @@ export PATH="/usr/local/opt/libpcap/bin:$PATH"
 # 兼容 bash completion 下的自动完成脚本， 在 $ZSH/oh-my-zsh.sh 文件中已经存在
 # https://github.com/spf13/cobra/blob/master/shell_completions.md 
 # autoload -U compinit; compinit
+
+alias dotgit='git --git-dir=$HOME/dotfiles/ --work-tree=$HOME'
+
