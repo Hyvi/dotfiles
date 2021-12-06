@@ -1,5 +1,9 @@
 Vim 配置，持续更新
 
+参考 yanzhang0219 / dotfiles 之后，决定使用 bare Git Repo 方式来管理配置文件
+
+Using a bare Git repository to track dotfiles<sup>[1]</sup>
+
 # Vim Install
 子标题为各个插件的安装注意项。
 
@@ -79,4 +83,7 @@ mononoki
 [ sebdah's nvim configuratio ](https://github.com/sebdah/dotfiles/blob/ab2c2357a6853a29010762a45610b2ab31c71eb5/config/nvim/init.vim)
 
 [ airblade vim configuration ](https://github.com/airblade/dotvim/blob/master/vimrc)
+
+[1] Greg Owen: Using a bare Git repo to get version control for my dotfiles
+
 
