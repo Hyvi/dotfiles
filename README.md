@@ -68,6 +68,10 @@ sudo chown -R root:staff /usr/local/share/zsh
 [https://github.com/zsh-users/zsh-autosuggestions#usage]
 
 
+## zsh-syntax-highlighting
+zsh-users / zsh-syntax-highlighting
+
+
 # Iterm 2
 
 ## Colorscheme 设置
