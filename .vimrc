@@ -84,7 +84,9 @@ Plugin 'diepm/vim-rest-console'
 Plugin 'elzr/vim-json'
 
 " syntax highlight
-Plugin 'sheerun/vim-polyglot'
+" Plugin 'sheerun/vim-polyglot'
+Plugin 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}  " We recommend updating the parsers on update
+
 
 " statusline 
  Plugin 'itchyny/lightline.vim'

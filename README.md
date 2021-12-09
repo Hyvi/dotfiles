@@ -1,4 +1,6 @@
-Vim 配置，持续更新
+!!! Nvim from Vim
+
+Nvim/vim 配置，持续更新
 
 参考 yanzhang0219 / dotfiles 之后，决定使用 bare Git Repo 方式来管理配置文件
 
@@ -6,6 +8,8 @@ Using a bare Git repository to track dotfiles<sup>[1]</sup>
 
 # Vim Install
 子标题为各个插件的安装注意项。
+
+若使用 nvim，那么需要安装 pynvim， ` python3 -m pip install --user --upgrade pynvim ` <sup>[2]</sup> .
 
 ## Vundle 安装
 ```bash
@@ -19,12 +23,6 @@ git clone https://github.com/Hyvi/vim-plugin.git
 # 或者 mv vim-plugin/ftpugin ~/.vim/
 ln -s vim-plugin/ftplugin ~/.vim/ftplugin
 ````
-
-## YouCompleteMe
-PS: 使用 vim-go 本身自动完成功能，支持 Golang 代码完成
-```bash
-python3.7  install.py
-```
 
 ## Tagbar
 
@@ -90,4 +88,4 @@ mononoki
 
 [1] Greg Owen: Using a bare Git repo to get version control for my dotfiles
 
-
+[2] neovim: NVIM REFERENCE MANUAL, Transitioning from Vim 
