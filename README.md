@@ -79,6 +79,8 @@ Neovim does not support built-in autocompletion. As mentioned in the readme, you
 # Zshrc
 记录 zsh + oh-my-zsh 的安装和使用
 
+配置保存在 dotfiles repo 里。
+
 ## zsh completion(compinit / compaudit)
 
 > zsh compinit: insecure directories, run compaudit for list.  Ignore insecure directories and continue [y] or abort compinit [n]? y
@@ -91,7 +93,7 @@ sudo chown -R root:staff /usr/local/share/zsh
 ```
 
 ## Zsh-autosuggestions
-[https://github.com/zsh-users/zsh-autosuggestions#usage]
+zsh-users / zsh-autosuggestions，需要手动安装到 oh-my-zsh/custom/plugins/ 目录下。
 
 
 ## zsh-syntax-highlighting
@@ -103,7 +105,7 @@ fzf is a general-purpose command-line fuzzy finder.
 # Iterm 2
 
 ## Colorscheme 设置
-参考 airblade vim 的设置，更改 Vim 的 colorscheme 为 NeoDark 黑色主题，为了保持 Iterm 2 的主题和 Vim 一致， 使用 [NeoDark.itermcolors](https://github.com/KeitaNakamura/neodark.vim/blob/master/terms/NeoDark.itermcolors) 修改 Iterm 2 的主题。
+~~参考 airblade vim 的设置，更改 Vim 的 colorscheme 为 NeoDark 黑色主题，为了保持 Iterm 2 的主题和 Vim 一致， 使用 [NeoDark.itermcolors](https://github.com/KeitaNakamura/neodark.vim/blob/master/terms/NeoDark.itermcolors) 修改 Iterm 2 的主题。~~
 
 Challenger Deep Theme for VIM, 切换到颜色突出的主题
 
