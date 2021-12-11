@@ -66,13 +66,21 @@ Plugin 'diepm/vim-rest-console'
 
 Plugin 'elzr/vim-json'
 
-" syntax highlight
+" nvim syntax highlight
 " Plugin 'sheerun/vim-polyglot'
 Plugin 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}  " We recommend updating the parsers on update
 
+" nvim lsp 
+Plugin 'neovim/nvim-lspconfig'
 
 " statusline 
- Plugin 'itchyny/lightline.vim'
+Plugin 'itchyny/lightline.vim'
+
+" nvim auto compeletion 
+Plugin 'hrsh7th/nvim-cmp'
+Plugin 'hrsh7th/cmp-nvim-lsp' 
+Plugin 'saadparwaiz1/cmp_luasnip'
+Plugin 'L3MON4D3/LuaSnip'
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
@@ -367,67 +375,26 @@ au FileType go nmap <F9> :GoCoverageToggle -short<cr>
 au Filetype go nmap <leader>ga <Plug>(go-alternate-edit)
 au Filetype go nmap <leader>gah <Plug>(go-alternate-split)
 au Filetype go nmap <leader>gav <Plug>(go-alternate-vertical)
-au FileType go nmap <leader>gt :GoDeclsDir<cr>
+au FileType go nmap <leader>gg :GoDeclsDir<cr>
 au FileType go nmap <leader>gc <Plug>(go-coverage-toggle)
 au FileType go nmap <leader>v <Plug>(go-def-vertical)
 au FileType go nmap <leader>h <Plug>(go-def-split)
 au FileType go nmap <leader>x <Plug>(go-doc-vertical)
 au FileType go nmap <leader>r <Plug>(go-referrers)
 autocmd FileType go nmap <silent> <Leader>gd <Plug>(go-def-tab)
-" GoMetaLinter 后面必须跟上path， 目前没有获取当前文件名的当时。先取消此快捷键
-" au FileType go nmap <silent> <leader>l :GoMetaLinter <CR>
 autocmd FileType go nmap <silent> <leader>gt  <Plug>(go-test)
 autocmd FileType go nmap <silent> <leader>gr  <Plug>(go-run)
 
-
-" Run goimports when running gofmt
-let g:go_fmt_command = "goimports"
 
 let g:go_doc_popup_window = 1
 
 " Set ultisnips as snippet engine
 let g:go_snippet_engine = "ultisnips"
 
-" gometalinter configuration
-" 当升级golang版本时，需要重新rebuild golangci-lint， 执行如下命令
-" GO111MODULE=off go get  -u github.com/golangci/golangci-lint/cmd/golangci-lint
-let g:go_metalinter_command = "golangci-lint"
-let g:go_metalinter_deadline = "15s"
-
-let g:go_metalinter_enabled = [
-    \ 'govet',
-    \ 'errcheck',
-    \ 'staticcheck',
-    \ 'unused',
-    \ 'gosimple',
-    \ 'structcheck',
-    \ 'varcheck',
-    \ 'ineffassign',
-    \ 'deadcode',
-    \ 'typecheck'
-\]
-
-
-let g:go_metalinter_autosave_enabled = [
-    \ 'govet',
-    \ 'errcheck',
-    \ 'staticcheck',
-    \ 'unused',
-    \ 'gosimple',
-    \ 'structcheck',
-    \ 'varcheck',
-    \ 'ineffassign',
-    \ 'deadcode',
-    \ 'typecheck'
-\]
-
 " Set whether the JSON tags should be snakecase or camelcase
 let g:go_addtags_transform = "snakecase"
-let g:go_metalinter_autosave = 1
-" by default guru is being used as it covers all edge cases, But one might
-" also use godef as it's faster
-" Guru isn't aware of modules
-let g:go_def_mode = 'gopls'
+
+" let g:go_metalinter_autosave = 1
 
 " Identifier highlighting
 " https://github.com/fatih/vim-go/wiki/Tutorial#identifier-highlighting

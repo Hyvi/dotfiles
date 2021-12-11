@@ -48,6 +48,24 @@ A light and configurable statusline/tabline plugin for Vim
 
 结合主题 Challenger Deep Theme for VIM 使用。
 
+
+## lspconfig 
+A collection of common configurations for Neovim's built-in language server client.
+
+### gopls 
+确认 gopls 已经安装了
+
+### golangci_lint_ls
+```bash 
+go install github.com/nametake/golangci-lint-langserver@latest
+go install github.com/golangci/golangci-lint/cmd/golangci-lint@v1.42.1
+```
+
+TODO：默认是 `--enable-all` 如何自定义的检查的工具
+
+### nvim-comp
+Neovim does not support built-in autocompletion. As mentioned in the readme, you can bind the completion results to omnifunc for on-demand completion. To use autocompletion, please use an external plugin. We recommend nvim-cmp, the successor/rewrite of nvim-compe. <sup>[5]</sup>
+
 # Zshrc
 记录 zsh + oh-my-zsh 的安装和使用
 
@@ -89,3 +107,7 @@ mononoki
 [1] Greg Owen: Using a bare Git repo to get version control for my dotfiles
 
 [2] neovim: NVIM REFERENCE MANUAL, Transitioning from Vim 
+
+[5] nvim-lspconfig's WIKI: Autocompletion
+
+
