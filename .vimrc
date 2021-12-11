@@ -5,18 +5,6 @@
 " # 需要安装 CtrlSF的依赖ripgrep
 " $ brew install ripgrep
 "
-" # 代码提示插件也需要你运行安装哦，不然没有效果嘞
-" $ cd ~/.vim/plugged/YouCompleteMe
-" $ ./install.py
-" # or 新版脚本过时了，推荐上面脚本
-" $ ./install.sh
-"
-" # 需要安装ctags 不然配置没效果哦
-" # ctags for Mac
-" $ brew install ctags
-" # ctags for Centos7
-" $ yum install ctags
-"
 " }}}
 let mapleader=";"
 " filetype off                  " required
@@ -39,9 +27,6 @@ Plugin 'godlygeek/tabular'
 Plugin 'scrooloose/nerdtree'
 Plugin 'Xuyuanp/nerdtree-git-plugin'
 Plugin 'scrooloose/nerdcommenter'
-" 随键而全的、支持模糊搜索的、高速补全的插件
-" YCM 由 google 公司搜索项目组的软件工程师 Strahinja Val Markovic 所开发
-" Plugin 'Valloric/YouCompleteMe'
 
 " 检索文件， 类似 IDE 的 Command + p
 Plugin 'ctrlpvim/ctrlp.vim'
@@ -64,8 +49,6 @@ Plugin 'airblade/vim-gitgutter'
 Plugin 'tpope/vim-fugitive'
 " go
 Plugin 'fatih/vim-go'
-" check
-Plugin 'vim-syntastic/syntastic'
 
 " chinese 排版
 Plugin 'hotoo/pangu.vim'
@@ -270,64 +253,7 @@ let g:NERDTreeGitStatusIndicatorMapCustom = {
     \ }
 " }}}
 
-" YCM 补全 {{{
 
-" 随键而全的、支持模糊搜索的、高速补全的插件
-" YCM 由 google 公司搜索项目组的软件工程师 Strahinja Val Markovic 所开发
-" Plug 'Valloric/YouCompleteMe'
-" YCM 补全菜单配色
-" 菜单
-" highlight Pmenu ctermfg=2 ctermbg=3 guifg=#005f87 guibg=#EEE8D5
-" 选中项
-" highlight PmenuSel term=bold ctermbg=darkred guibg=#13354A
-
-
-" 补全功能在注释中同样有效
-let g:ycm_complete_in_comments=1
-
-" 允许 vim 加载 .ycm_extra_conf.py 文件，不再提示
-let g:ycm_confirm_extra_conf=0
-
-" 开启 YCM 标签补全引擎
-let g:ycm_collect_identifiers_from_tags_files=0
-"" 引入 C++ 标准库 tags
-"set tags+=/data/misc/software/app/vim/stdcpp.tags
-"set tags+=/data/misc/software/app/vim/sys.tags
-
-" YCM 集成 OmniCppComplete 补全引擎，设置其快捷键
-inoremap <leader>; <C-x><C-o>
-
-" 补全内容不以分割子窗口形式出现，只显示补全列表
-set completeopt-=preview
-
-" 从第一个键入字符就开始罗列匹配项
-let g:ycm_min_num_of_chars_for_completion=3
-
-" 禁止缓存匹配项，每次都重新生成匹配项
-let g:ycm_cache_omnifunc=0
-
-" 语法关键字补全
-let g:ycm_seed_identifiers_with_syntax=1
-
-" 设置为空字符串，去掉默认的快捷键
-let g:ycm_key_detailed_diagnostics = ''
-
-" 跳转到定义GoToDefinition
-" 跳转到声明GoToDeclaration
-" 以及两者的合体GoToDefinitionElseDeclaration
-"
-" YCM提供的跳跃功能采用了vim的jumplist，往前跳和往后跳的快捷键为Ctrl+O以及Ctrl+I。
-nnoremap <leader>gl :YcmCompleter GoToDeclaration<CR>
-nnoremap <leader>gf :YcmCompleter GoToDefinition<CR>
-nnoremap <leader>gg :YcmCompleter GoToDefinitionElseDeclaration<CR>
-
-
-" }}}
-
-" command-t 文件检索 {{{
-" supplement rather than replace the global setting(Vim's global 'wildignore' setting
-let g:CommandTWildIgnore=&wildignore . ",vendor"
-" }}}
 
 " 标签列表 {{{
 
@@ -426,26 +352,6 @@ nmap ghp <Plug>(GitGutterPreviewHunk)
 
 " }}}
 
-" Syntastic {{{
-" Syntastic Recommended settings
-" set statusline+=%#warningmsg#
-" set statusline+=%{SyntasticStatuslineFlag()}
-" set statusline+=%*
-
-let g:syntastic_always_populate_loc_list = 1
-let g:syntastic_auto_loc_list = 1
-let g:syntastic_check_on_open = 1
-let g:syntastic_check_on_wq = 1
-let g:syntastic_python_checkers = ['pylint']
-
-" let g:syntastic_go_go_build_args=''
-"
-let g:syntastic_go_checkers = ['gometalinter']
-" both 'vim-go' and syntastic run systax checks by default when you save
-" buffers to disk.  Then set passive mode in syntastic for "go" filetypes
-let g:syntastic_mode_map = { 'mode': 'passive','active_filetypes': ['python'] }
-
-" }}}
 
 "----------------------------------------------
 " Language: Golang  vim-go {{{
@@ -481,10 +387,6 @@ let g:go_doc_popup_window = 1
 
 " Set ultisnips as snippet engine
 let g:go_snippet_engine = "ultisnips"
-
-" Fix for location list when vim-go is used together with Syntastic
-" let g:go_list_type = "locationlist"
-" let g:go_list_type_commands = {"GoMetaLinter": "locationlist"}
 
 " gometalinter configuration
 " 当升级golang版本时，需要重新rebuild golangci-lint， 执行如下命令
