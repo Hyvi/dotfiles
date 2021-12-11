@@ -482,17 +482,6 @@ let g:go_doc_popup_window = 1
 " Set ultisnips as snippet engine
 let g:go_snippet_engine = "ultisnips"
 
-" Enable syntax highlighting per default
-let g:go_highlight_types = 1
-let g:go_highlight_fields = 1
-let g:go_highlight_functions = 1
-let g:go_highlight_methods = 1
-let g:go_highlight_structs = 1
-let g:go_highlight_operators = 1
-let g:go_highlight_build_constraints = 1
-let g:go_highlight_extra_types = 1
-
-
 " Fix for location list when vim-go is used together with Syntastic
 " let g:go_list_type = "locationlist"
 " let g:go_list_type_commands = {"GoMetaLinter": "locationlist"}
