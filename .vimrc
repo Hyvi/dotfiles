@@ -183,6 +183,9 @@ nnoremap <c-J> <C-W>j    " 跳转至下方的子窗口
 
 "  nmap <Leader>M %              " 定义快捷键在结对符之间跳转
 
+" scrolling without changing cursors on-screen position
+noremap <C-k> 2j2<C-e>
+noremap <C-l> 2k2<C-y>
 
 
 " 快速开关注释 {{{
