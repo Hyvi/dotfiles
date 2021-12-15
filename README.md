@@ -63,6 +63,11 @@ go install github.com/golangci/golangci-lint/cmd/golangci-lint@v1.42.1
 
 TODO：默认是 `--enable-all` 如何自定义的检查的工具
 
+### sumneko_lua
+```
+brew install lua-language-server                                                                                                                                                                                    mast```
+```
+
 ### nvim-comp
 Neovim does not support built-in autocompletion. As mentioned in the readme, you can bind the completion results to omnifunc for on-demand completion. To use autocompletion, please use an external plugin. We recommend nvim-cmp, the successor/rewrite of nvim-compe. <sup>[5]</sup>
 
