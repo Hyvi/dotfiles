@@ -29,7 +29,7 @@ require'nvim-treesitter.configs'.setup {
 
 
 ------------------------------------------------
--- Language: Plugin lspconfig {{{
+-- Language: Plugin lspconfig & auto completion{{{
 ------------------------------------------------
 
 local nvim_lsp = require('lspconfig')
@@ -67,12 +67,18 @@ local on_attach = function(client, bufnr)
 
 end
 
+-- Add additional capabilities supported by nvim-cmp
+local capabilities = vim.lsp.protocol.make_client_capabilities()
+capabilities = require('cmp_nvim_lsp').update_capabilities(capabilities)
+
 -- Use a loop to conveniently call 'setup' on multiple servers and
 -- map buffer local keybindings when the language server attaches
 local servers = { 'pyright', 'sumneko_lua' }
 for _, lsp in ipairs(servers) do
   nvim_lsp[lsp].setup {
     on_attach = on_attach,
+    -- Enable some language servers with the additional completion capabilities offered by nvim-cmp
+    capabilities = capabilities,
     flags = {
       debounce_text_changes = 150,
     }
@@ -81,34 +87,10 @@ end
 
 nvim_lsp.gopls.setup {
   -- on_attach = on_attach,
+  capabilities = capabilities,
 }
 
 nvim_lsp.golangci_lint_ls.setup{}
-
-
--- }}}
-
-
-------------------------------------------------
--- Language: Plugin auto completion{{{
-------------------------------------------------
-
-
--- Add additional capabilities supported by nvim-cmp
-local capabilities = vim.lsp.protocol.make_client_capabilities()
-capabilities = require('cmp_nvim_lsp').update_capabilities(capabilities)
-
-
-local lspconfig = require('lspconfig')
-
--- Enable some language servers with the additional completion capabilities offered by nvim-cmp
-local servers = { 'pyright', 'gopls', 'sumneko_lua' }
-for _, lsp in ipairs(servers) do
-  lspconfig[lsp].setup {
-    -- on_attach = my_custom_on_attach,
-    capabilities = capabilities,
-  }
-end
 
 -- Set completeopt to have a better completion experience
 vim.o.completeopt = 'menuone,noselect'
