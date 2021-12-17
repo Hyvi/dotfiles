@@ -65,7 +65,7 @@ TODO：默认是 `--enable-all` 如何自定义的检查的工具
 
 ### sumneko_lua
 ```
-brew install lua-language-server                                                                                                                                                                                    mast```
+brew install lua-language-server
 ```
 
 ### nvim-comp
