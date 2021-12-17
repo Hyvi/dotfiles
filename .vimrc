@@ -82,6 +82,8 @@ Plugin 'hrsh7th/cmp-nvim-lsp'
 Plugin 'saadparwaiz1/cmp_luasnip'
 Plugin 'L3MON4D3/LuaSnip'
 
+Plugin 'folke/lua-dev.nvim'
+
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
 " }}}

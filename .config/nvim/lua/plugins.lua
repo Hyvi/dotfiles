@@ -73,7 +73,7 @@ capabilities = require('cmp_nvim_lsp').update_capabilities(capabilities)
 
 -- Use a loop to conveniently call 'setup' on multiple servers and
 -- map buffer local keybindings when the language server attaches
-local servers = { 'pyright', 'sumneko_lua' }
+local servers = { 'pyright' }
 for _, lsp in ipairs(servers) do
   nvim_lsp[lsp].setup {
     on_attach = on_attach,
@@ -84,6 +84,19 @@ for _, lsp in ipairs(servers) do
     }
   }
 end
+
+
+local luadev = require("lua-dev").setup({
+  -- add any options here, or leave empty to use the default settings
+  lspconfig = {
+    cmd = {"lua-language-server"},
+    on_attach = on_attach,
+    capabilities = capabilities,
+  },
+})
+
+
+nvim_lsp.sumneko_lua.setup(luadev)
 
 nvim_lsp.gopls.setup {
   -- on_attach = on_attach,
