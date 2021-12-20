@@ -24,9 +24,12 @@ Plugin 'challenger-deep-theme/vim', {'name': 'challenger-deep-theme'}
 
 " edit
 Plugin 'godlygeek/tabular'
-Plugin 'scrooloose/nerdtree'
+Plugin 'preservim/nerdtree'
 Plugin 'Xuyuanp/nerdtree-git-plugin'
-Plugin 'scrooloose/nerdcommenter'
+Plugin 'preservim/nerdcommenter'
+
+Plugin 'preservim/vimux'
+Plugin 'benmills/vimux-golang'
 
 " 检索文件， 类似 IDE 的 Command + p
 Plugin 'ctrlpvim/ctrlp.vim'
@@ -83,6 +86,8 @@ Plugin 'saadparwaiz1/cmp_luasnip'
 Plugin 'L3MON4D3/LuaSnip'
 
 Plugin 'folke/lua-dev.nvim'
+
+Plugin 'skywind3000/asyncrun.vim'
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
