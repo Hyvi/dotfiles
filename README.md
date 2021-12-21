@@ -1,15 +1,21 @@
 !!! Nvim from Vim
 
-Nvim/vim 配置，持续更新
+Nvim 配置，持续更新
 
 参考 yanzhang0219 / dotfiles 之后，决定使用 bare Git Repo 方式来管理配置文件
 
 Using a bare Git repository to track dotfiles<sup>[1]</sup>
 
-# Vim Install
+# Nvim Install
 子标题为各个插件的安装注意项。
 
-若使用 nvim，那么需要安装 pynvim， ` python3 -m pip install --user --upgrade pynvim ` <sup>[2]</sup> .
+## pynvim 
+
+>  Pynvim implements support for python plugin in Nvim. It also works as a library for connecting to and scripting Nvim processes through its msgpack-rpc API
+若使用 nvim，那么需要安装 pynvim<sup>[2]</sup> .
+```
+python3 -m pip install --user --upgrade pynvim 
+``` 
 
 ## Vundle 安装
 ```bash
