@@ -46,7 +46,9 @@ Plugin 'plasticboy/vim-markdown'
 " 原因： 实时预览还是很少用到
 " Plugin 'suan/vim-instant-markdown'
 Plugin 'lvht/tagbar-markdown'
-Plugin 'masukomi/vim-markdown-folding'
+" Plugin 'masukomi/vim-markdown-folding'
+Plugin 'ellisonleao/glow.nvim'
+
 " git
 Plugin 'airblade/vim-gitgutter'
 Plugin 'tpope/vim-fugitive'
@@ -89,6 +91,7 @@ Plugin 'folke/lua-dev.nvim'
 
 Plugin 'skywind3000/asyncrun.vim'
 
+Plugin 'freitass/todo.txt-vim'
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
 " }}}
@@ -194,6 +197,7 @@ nnoremap <c-J> <C-W>j    " 跳转至下方的子窗口
 noremap <C-k> 2j2<C-e>
 noremap <C-l> 2k2<C-y>
 
+let maplocalleader=","
 
 " 快速开关注释 {{{
 " Plug 'scrooloose/nerdcommenter'
@@ -495,4 +499,9 @@ let g:vrc_curl_opts = {
 \}
 " }}}
 
+"----------------------------------------------
+"  nvim-glow {{{
+"----------------------------------------------
+noremap <leader>p :Glow<CR>
+" }}}
 " vim: foldmethod=marker
