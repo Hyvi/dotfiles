@@ -92,6 +92,9 @@ Plugin 'folke/lua-dev.nvim'
 Plugin 'skywind3000/asyncrun.vim'
 
 Plugin 'freitass/todo.txt-vim'
+
+" 多光标支持， TheCW bilibili 多光标
+Plugin 'mg979/vim-visual-multi', {'branch': 'master'}
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
 " }}}
