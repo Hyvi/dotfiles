@@ -30,12 +30,8 @@ git clone https://github.com/Hyvi/vim-plugin.git
 ln -s vim-plugin/ftplugin ~/.vim/ftplugin
 ````
 
-## Tagbar
-
-### lvht/tagbar-markdown
-tagbar 本身支持 markdown, [ wiki markdown ](https://github.com/majutsushi/tagbar/wiki#markdown)，但是在 UI 上有点差，比如 tagbar-markdown.
-
-- tagbar-markdown 需要 Php 的支持。
+## vista.vim 
+取代 tagbar，vista.vim 支持 LSP 也支持 ctags。通过 `Vista` 开启。
 
 ## vim-rest-console
 默认使用 `python -m json.tool` 来格式，存在以下问题：
@@ -98,6 +94,10 @@ sudo chown -R root:staff /usr/local/share/zsh
 ## zsh-syntax-highlighting
 zsh-users / zsh-syntax-highlighting
 
+# fzf
+fzf is a general-purpose command-line fuzzy finder. 
+
+~~bar Preview window. 因只能预览文件，不作为默认预览。~~
 
 # Iterm 2
 

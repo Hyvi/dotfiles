@@ -34,19 +34,13 @@ Plugin 'benmills/vimux-golang'
 " 检索文件， 类似 IDE 的 Command + p
 Plugin 'ctrlpvim/ctrlp.vim'
 
-Plugin 'majutsushi/tagbar'
-Plugin 'terryma/vim-multiple-cursors'
 Plugin 'SirVer/ultisnips'
 Plugin 'honza/vim-snippets'
 Plugin 'dyng/ctrlsf.vim'
 Plugin 'Valloric/MatchTagAlways'
 
-" md
+" md & 预览
 Plugin 'plasticboy/vim-markdown'
-" 原因： 实时预览还是很少用到
-" Plugin 'suan/vim-instant-markdown'
-Plugin 'lvht/tagbar-markdown'
-" Plugin 'masukomi/vim-markdown-folding'
 Plugin 'ellisonleao/glow.nvim'
 
 " git
@@ -95,6 +89,12 @@ Plugin 'freitass/todo.txt-vim'
 
 " 多光标支持， TheCW bilibili 多光标
 Plugin 'mg979/vim-visual-multi', {'branch': 'master'}
+
+" replacing tagbar , support LSP symbols
+Plugin 'liuchengxu/vista.vim'
+
+" fzf for vim 
+Plugin 'junegunn/fzf'
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
 " }}}
@@ -506,5 +506,36 @@ let g:vrc_curl_opts = {
 "  nvim-glow {{{
 "----------------------------------------------
 noremap <leader>p :Glow<CR>
+" }}}
+
+
+"----------------------------------------------
+"  vista.vim {{{
+"----------------------------------------------
+let g:vista_icon_indent = ["╰─▸ ", "├─▸ "]
+
+let g:vista_executive_for = {
+  \ 'golang': 'nvim_lsp',
+  \ 'python': 'nvim_lsp',
+  \ 'lua': 'nvim_lsp',
+  \ 'markdown': 'toc',
+  \ }
+
+let g:vista_echo_cursor_strategy = 'scroll'
+
+let g:vista#renderer#enable_icon = 0
+
+let g:vista_update_on_text_changed = 1
+let g:vista_close_on_jump = 2
+let g:vista_disable_statusline = 1
+
+nnoremap <leader>fs :Vista finder<CR>
+nnoremap <leader>v :Vista!!<CR>
+" }}}
+
+"----------------------------------------------
+"  fzf.vim {{{
+"----------------------------------------------
+
 " }}}
 " vim: foldmethod=marker
