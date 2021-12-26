@@ -73,6 +73,9 @@ brew install lua-language-server
 ### nvim-comp
 Neovim does not support built-in autocompletion. As mentioned in the readme, you can bind the completion results to omnifunc for on-demand completion. To use autocompletion, please use an external plugin. We recommend nvim-cmp, the successor/rewrite of nvim-compe. <sup>[5]</sup>
 
+## vim-barbaric 输入法
+如何离开 insert 模式的时候自动切换到英文输入
+
 # Zshrc
 记录 zsh + oh-my-zsh 的安装和使用
 

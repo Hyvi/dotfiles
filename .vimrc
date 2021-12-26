@@ -99,6 +99,10 @@ Plugin 'junegunn/fzf', { 'do': { -> fzf#install() } }
 Plugin 'junegunn/fzf.vim'
 
 Plugin 'ojroques/nvim-lspfuzzy'
+
+" 输入法莫斯自动切换设置 https://jdhao.github.io/2021/02/25/nvim_ime_mode_auto_switch/
+Plugin 'rlue/vim-barbaric'
+
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
 " }}}
