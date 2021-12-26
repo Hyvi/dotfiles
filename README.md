@@ -94,10 +94,8 @@ sudo chown -R root:staff /usr/local/share/zsh
 ## zsh-syntax-highlighting
 zsh-users / zsh-syntax-highlighting
 
-# fzf
+# fzf & fzf.vim & nvim-lspfuzzy
 fzf is a general-purpose command-line fuzzy finder. 
-
-~~bar Preview window. 因只能预览文件，不作为默认预览。~~
 
 # Iterm 2
 

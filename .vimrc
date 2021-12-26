@@ -94,7 +94,11 @@ Plugin 'mg979/vim-visual-multi', {'branch': 'master'}
 Plugin 'liuchengxu/vista.vim'
 
 " fzf for vim 
-Plugin 'junegunn/fzf'
+Plugin 'junegunn/fzf', { 'do': { -> fzf#install() } }
+
+Plugin 'junegunn/fzf.vim'
+
+Plugin 'ojroques/nvim-lspfuzzy'
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
 " }}}
@@ -536,6 +540,6 @@ nnoremap <leader>v :Vista!!<CR>
 "----------------------------------------------
 "  fzf.vim {{{
 "----------------------------------------------
-
+lua require('lspfuzzy').setup {}
 " }}}
 " vim: foldmethod=marker
