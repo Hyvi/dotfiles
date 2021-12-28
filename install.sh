@@ -30,3 +30,6 @@ chmod a+x /usr/local/bin/xkbswitch
 brew install fzf
 $(brew --prefix)/opt/fzf/install
 
+# vista.vim 插件使用 ctags 
+
+brew install ctags

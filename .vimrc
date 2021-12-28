@@ -523,7 +523,7 @@ noremap <leader>p :Glow<CR>
 let g:vista_icon_indent = ["╰─▸ ", "├─▸ "]
 
 let g:vista_executive_for = {
-  \ 'golang': 'nvim_lsp',
+  \ 'go': 'nvim_lsp',
   \ 'python': 'nvim_lsp',
   \ 'lua': 'nvim_lsp',
   \ 'markdown': 'toc',
@@ -538,7 +538,7 @@ let g:vista_close_on_jump = 2
 let g:vista_disable_statusline = 1
 
 nnoremap <leader>fs :Vista finder<CR>
-nnoremap <leader>v :Vista!!<CR>
+nnoremap <leader>fv :Vista!!<CR>
 " }}}
 
 "----------------------------------------------
