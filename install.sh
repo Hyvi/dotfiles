@@ -29,6 +29,7 @@ chmod a+x /usr/local/bin/xkbswitch
 # 安装 fzf
 brew install fzf
 $(brew --prefix)/opt/fzf/install
+brew install bat  # preview 高亮显示
 
 # vista.vim 插件使用 ctags 
 
