@@ -1,5 +1,5 @@
 # If you come from bash you might have to change your $PATH.
-# export PATH=$HOME/go/bin:$PATH
+export PATH=$HOME/go/bin:$PATH
 # https://juejin.cn/post/6844904001251573773 
 # bash读取的配置文件：~/.bash_profile文件
 # zsh读取的配置文件：~/.zshrc文件

@@ -46,6 +46,8 @@ Plugin 'ellisonleao/glow.nvim'
 " git
 Plugin 'airblade/vim-gitgutter'
 Plugin 'tpope/vim-fugitive'
+Plugin 'junegunn/gv.vim'
+
 " go
 Plugin 'fatih/vim-go'
 
