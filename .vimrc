@@ -468,8 +468,10 @@ endfun
 
 " vim-yankstack {{{
 " ref: https://www.0value.com/my-go-centric-vim-setup
-nmap <leader>p <Plug>yankstack_substitute_older_paste
-nmap <leader>P <Plug>yankstack_substitute_newer_paste
+" ref: https://github.com/neovim/neovim/issues/2379, enable meta key
+" use defualt Key Mappings
+" nmap <leader>p <Plug>yankstack_substitute_older_paste
+" nmap <leader>P <Plug>yankstack_substitute_newer_paste
 " }}}
 
 "----------------------------------------------
@@ -515,7 +517,7 @@ let g:vrc_curl_opts = {
 "----------------------------------------------
 "  nvim-glow {{{
 "----------------------------------------------
-noremap <leader>p :Glow<CR>
+" noremap <leader>p :Glow<CR>
 " }}}
 
 

@@ -76,6 +76,9 @@ Neovim does not support built-in autocompletion. As mentioned in the readme, you
 ## vim-barbaric 输入法
 如何离开 insert 模式的时候自动切换到英文输入
 
+## vim-yankstack
+A lightweight implementation of emacs's kill-ring for vim。循环遍历“yank and delete thing”。
+
 # Zshrc
 记录 zsh + oh-my-zsh 的安装和使用
 
