@@ -132,3 +132,10 @@ alias dotgit='git --git-dir=$HOME/dotfiles/ --work-tree=$HOME'
 export PATH="$HOME/.gem/ruby/2.6.0/bin:$PATH"
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+
+# https://jdhao.github.io/2020/11/11/nifty_nvim_techniques_s8/#use-neovim-as-man-pager
+if [[ "$(command -v nvim)" ]]; then
+    export EDITOR='nvim'
+    export MANPAGER='nvim +Man!'
+    export MANWIDTH=999
+fi

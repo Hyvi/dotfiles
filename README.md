@@ -79,6 +79,9 @@ Neovim does not support built-in autocompletion. As mentioned in the readme, you
 ## vim-yankstack
 A lightweight implementation of emacs's kill-ring for vim。循环遍历“yank and delete thing”。
 
+## junegunn/gv.vim
+更方便查看某个文件或某行的更新历史
+
 # Zshrc
 记录 zsh + oh-my-zsh 的安装和使用
 
