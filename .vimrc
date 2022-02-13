@@ -240,6 +240,8 @@ let g:NERDTrimTrailingWhitespace = 1
 " 使用 NERDTree 插件查看工程文件。设置快捷键，速记：file list
 nmap <Leader>fl :NERDTreeToggle<CR>
 
+nnoremap <silent> <F2> :NERDTreeFind<CR>
+
 " NERDTree: File highlighting 文件列表，文件名字各种颜色高亮
 function! NERDTreeHighlightFile(extension, fg, bg, guifg, guibg)
   exec 'autocmd filetype nerdtree highlight ' . a:extension .' ctermbg='. a:bg .' ctermfg='. a:fg .' guibg='. a:guibg .' guifg='. a:guifg
@@ -260,7 +262,7 @@ call NERDTreeHighlightFile('js',     'Red', 'none', '#ffa500', '#151515')
 call NERDTreeHighlightFile('php',    'Magenta', 'none', '#ff00ff', '#151515')
 
 " 设置 NERDTree 子窗口宽度
-let NERDTreeWinSize=32
+let NERDTreeWinSize=50
 " 设置 NERDTree 子窗口位置
 let NERDTreeWinPos="left"
 " 显示隐藏文件
@@ -270,7 +272,13 @@ let NERDTreeMinimalUI=1
 " 删除文件时自动删除文件对应 buffer
 let NERDTreeAutoDeleteBuffer=1
 " 根据后缀隐藏文件
-let NERDTreeIgnore = ['\.pyc$']
+let g:NERDTreeChDirMode=2
+let g:NERDTreeIgnore=['node_modules','\.rbc$', '\~$', '\.pyc$', '\.db$', '\.sqlite$', '__pycache__']
+let g:NERDTreeSortOrder=['^__\.py$', '\/$', '*', '\.swp$', '\.bak$', '\~$']
+let g:NERDTreeShowBookmarks=1
+let g:NERDTreeMapOpenInTabSilent = '<RightMouse>'
+set wildignore+=*/tmp/*,*.so,*.swp,*.zip,*.pyc,*.db,*.sqlite,*node_modules/
+
 " }}}
 
 " nerdtree-git-plugin 配置 {{{
@@ -286,25 +294,6 @@ let g:NERDTreeGitStatusIndicatorMapCustom = {
     \ 'Ignored'   : '☒',
     \ "Unknown"   : "?"
     \ }
-" }}}
-
-
-
-" 标签列表 {{{
-
-" Plug 'majutsushi/tagbar'
-" 基于标签的标识符列表插件
-" 需要安装ctags `brew install ctags`
-" 安装ctags 之后签列表子窗口才能出现
-
-let tagbar_right=1                      " 设置 tagbar 子窗口的位置出现在主编辑区的左边
-let tagbar_width=56                   " 设置标签子窗口的宽度
-let g:tagbar_compact=1                 " tagbar 子窗口中不显示冗余帮助信息
-nnoremap <F8> :TagbarToggle<CR> " 设置显示／隐藏标签列表子窗口的快捷键。速记：identifier list by tag
-
-" markdown disable sort
-let g:tagbar_sort = 0
-
 " }}}
 
 " 查找 ctrlsf.vim {{{
@@ -338,7 +327,6 @@ let g:ctrlsf_default_root = 'project'
 let g:ctrlsf_ignore_dir = ['vendor']
 " }}}
 
-
 "vim-snippets / UltiSnip {{{
 
 " Trigger configuration. Do not use <tab> if you use https://github.com/Valloric/YouCompleteMe.
@@ -351,7 +339,6 @@ let g:UltiSnipsJumpBackwardTrigger="<c-z>"
 let g:UltiSnipsEditSplit="vertical"
 
 " }}}
-
 
 " Valloric/MatchTagAlways {{{
 
@@ -386,7 +373,6 @@ nmap ghp <Plug>(GitGutterPreviewHunk)
 
 
 " }}}
-
 
 "----------------------------------------------
 " Language: Golang  vim-go {{{
