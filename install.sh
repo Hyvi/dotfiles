@@ -34,3 +34,9 @@ brew install bat  # preview 高亮显示
 # vista.vim 插件使用 ctags 
 
 brew install ctags
+
+# 安装 yarn 
+curl --compressed -o- -L https://yarnpkg.com/install.sh | bash
+
+# 安装 错误检测， 比如 golangci-linter
+yarn global add diagnostic-languageserver

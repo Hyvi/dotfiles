@@ -50,6 +50,12 @@ A light and configurable statusline/tabline plugin for Vim
 
 结合主题 Challenger Deep Theme for VIM 使用。
 
+## Coc.vim 
+配置文件 coc-setting.json (~/.config/nvim) 目录下。
+
+### coc-diagnostic
+
+### coc-go
 
 ## lspconfig 
 A collection of common configurations for Neovim's built-in language server client.
