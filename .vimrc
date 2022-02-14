@@ -65,13 +65,14 @@ Plugin 'wellle/visual-split.vim'
 " Json
 Plugin 'diepm/vim-rest-console'
 
-Plugin 'elzr/vim-json'
+" Plugin 'elzr/vim-json'
 
 " nvim syntax highlight
 " Plugin 'sheerun/vim-polyglot'
 Plugin 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}  " We recommend updating the parsers on update
 
 Plugin 'neoclide/coc.nvim', {'branch': 'release'}
+
 " nvim lsp 
 " Plugin 'neovim/nvim-lspconfig'
 
@@ -711,5 +712,20 @@ nnoremap <silent><nowait> <space>j  :<C-u>CocNext<CR>
 nnoremap <silent><nowait> <space>k  :<C-u>CocPrev<CR>
 " Resume latest coc list.
 nnoremap <silent><nowait> <space>p  :<C-u>CocListResume<CR>
+" }}}
+"
+"----------------------------------------------
+" Language: json  {{{
+"---------------------------------------------- 
+au FileType json set expandtab 
+au FileType json set shiftwidth=2 
+au FileType json set softtabstop=2
+au FileType json set tabstop=2
+" }}}
+
+"----------------------------------------------
+" coc.vim  {{{
+"---------------------------------------------- 
+let g:coc_global_extensions = ['coc-json', 'coc-go', 'coc-pyright', 'coc-diagnostic']
 " }}}
 " vim: foldmethod=marker
