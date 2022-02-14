@@ -139,3 +139,5 @@ if [[ "$(command -v nvim)" ]]; then
     export MANPAGER='nvim +Man!'
     export MANWIDTH=999
 fi
+
+export PATH="$HOME/.yarn/bin:$HOME/.config/yarn/global/node_modules/.bin:$PATH"
