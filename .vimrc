@@ -107,6 +107,8 @@ Plugin 'ojroques/nvim-lspfuzzy'
 " 输入法莫斯自动切换设置 https://jdhao.github.io/2021/02/25/nvim_ime_mode_auto_switch/
 Plugin 'rlue/vim-barbaric'
 
+Plugin 'akinsho/bufferline.nvim'
+
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
 " }}}
@@ -143,6 +145,7 @@ endif
 "----------------------------------------------
 " General settings {{{
 "----------------------------------------------
+set hidden
 set nocompatible                  " be iMproved, required
 set backspace=indent,eol,start
 set autoread                      " reload file if the file changes on the disk
@@ -475,6 +478,7 @@ let g:lightline = {
       \   'gitbranch': 'FugitiveHead'
       \ },
       \ }
+
 
 " }}}
 
