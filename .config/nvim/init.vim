@@ -7,6 +7,7 @@ set termguicolors
 lua << EOF
 require("bufferline").setup{}
 EOF
-" lua require('plugins')
+
+lua require('plugins')
 
 " vim: foldmethod=marker ts=2 sw=2 et
