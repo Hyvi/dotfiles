@@ -32,11 +32,11 @@ Plugin 'preservim/vimux'
 Plugin 'benmills/vimux-golang'
 
 " 检索文件， 类似 IDE 的 Command + p
-Plugin 'ctrlpvim/ctrlp.vim'
+" Plugin 'ctrlpvim/ctrlp.vim'
 
 Plugin 'SirVer/ultisnips'
 Plugin 'honza/vim-snippets'
-Plugin 'dyng/ctrlsf.vim'
+" Plugin 'dyng/ctrlsf.vim'
 Plugin 'Valloric/MatchTagAlways'
 
 " md & 预览
@@ -108,6 +108,9 @@ Plugin 'ojroques/nvim-lspfuzzy'
 Plugin 'rlue/vim-barbaric'
 
 Plugin 'akinsho/bufferline.nvim'
+" Nerdtree 字体图标
+Plugin 'ryanoasis/vim-devicons'
+Plugin 'tiagofumo/vim-nerdtree-syntax-highlight'
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required

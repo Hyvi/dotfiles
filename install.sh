@@ -40,3 +40,7 @@ curl --compressed -o- -L https://yarnpkg.com/install.sh | bash
 
 # 安装 错误检测， 比如 golangci-linter
 yarn global add diagnostic-languageserver
+
+# 字体, 设置 Iterm 2 的字体为 Hack Regular Nerd Font Complete Mono
+brew tap homebrew/cask-fonts
+brew install --cask font-hack-nerd-font
