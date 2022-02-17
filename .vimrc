@@ -20,7 +20,8 @@ call vundle#begin()
 Plugin 'VundleVim/Vundle.vim'
 
 " theme
-Plugin 'challenger-deep-theme/vim', {'name': 'challenger-deep-theme'}
+" Plugin 'challenger-deep-theme/vim', {'name': 'challenger-deep-theme'}
+Plugin 'shaunsingh/solarized.nvim'
 
 " edit
 Plugin 'godlygeek/tabular'
@@ -138,7 +139,7 @@ let g:vim_markdown_folding_disabled = 1
 "----------------------------------------------
 " Colors {{{
 "----------------------------------------------
-colorscheme challenger_deep
+colorscheme solarized
 
 if has('nvim') || has('termguicolors')
   set termguicolors
@@ -258,25 +259,6 @@ let g:NERDTrimTrailingWhitespace = 1
 nmap <Leader>fl :NERDTreeToggle<CR>
 
 nnoremap <silent> <F2> :NERDTreeFind<CR>
-
-" NERDTree: File highlighting 文件列表，文件名字各种颜色高亮
-function! NERDTreeHighlightFile(extension, fg, bg, guifg, guibg)
-  exec 'autocmd filetype nerdtree highlight ' . a:extension .' ctermbg='. a:bg .' ctermfg='. a:fg .' guibg='. a:guibg .' guifg='. a:guifg
-  exec 'autocmd filetype nerdtree syn match ' . a:extension .' #^\s\+.*'. a:extension .'$#'
-endfunction
-
-call NERDTreeHighlightFile('jade',   'green', 'none', 'green', '#151515')
-call NERDTreeHighlightFile('md',     'blue', 'none', '#3366FF', '#151515')
-call NERDTreeHighlightFile('yml',    'magenta', 'none', 'yellow', '#E70350')
-call NERDTreeHighlightFile('config', 'yellow', 'none', 'yellow', '#151515')
-call NERDTreeHighlightFile('conf',   'yellow', 'none', 'yellow', '#151515')
-call NERDTreeHighlightFile('json',   'yellow', 'none', 'yellow', '#151515')
-call NERDTreeHighlightFile('html',   'green', 'none', 'green', '#04E703')
-call NERDTreeHighlightFile('styl',   'cyan', 'none', 'cyan', '#151515')
-call NERDTreeHighlightFile('css',    'cyan', 'none', 'cyan', '#151515')
-call NERDTreeHighlightFile('coffee', 'Red', 'none', 'red', '#151515')
-call NERDTreeHighlightFile('js',     'Red', 'none', '#ffa500', '#151515')
-call NERDTreeHighlightFile('php',    'Magenta', 'none', '#ff00ff', '#151515')
 
 " 设置 NERDTree 子窗口宽度
 let NERDTreeWinSize=50
@@ -481,7 +463,7 @@ endfun
 " statusline  {{{
 "----------------------------------------------
 let g:lightline = {
-      \ 'colorscheme': 'challenger_deep',
+      \ 'colorscheme': 'selenized_light',
       \ 'active': {
       \   'left': [ [ 'mode', 'paste' ],
       \             [ 'gitbranch', 'readonly', 'filename', 'modified' ] ]
@@ -490,7 +472,6 @@ let g:lightline = {
       \   'gitbranch': 'FugitiveHead'
       \ },
       \ }
-
 
 " }}}
 
