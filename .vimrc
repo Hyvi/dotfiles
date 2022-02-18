@@ -37,7 +37,7 @@ Plugin 'benmills/vimux-golang'
 
 Plugin 'SirVer/ultisnips'
 Plugin 'honza/vim-snippets'
-" Plugin 'dyng/ctrlsf.vim'
+Plugin 'dyng/ctrlsf.vim'
 Plugin 'Valloric/MatchTagAlways'
 
 " md & 预览
@@ -139,6 +139,14 @@ let g:vim_markdown_folding_disabled = 1
 "----------------------------------------------
 " Colors {{{
 "----------------------------------------------
+let g:solarized_italic_comments = v:true
+" let g:solarized_italic_keywords = v:true
+" let g:solarized_italic_functions = v:true
+" let g:solarized_italic_variables = v:false
+" let g:solarized_contrast = v:true
+" let g:solarized_borders = v:false
+" let g:solarized_disable_background = v:false
+
 colorscheme solarized
 
 if has('nvim') || has('termguicolors')
