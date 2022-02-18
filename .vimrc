@@ -9,123 +9,110 @@
 let mapleader=";"
 " filetype off                  " required
 
-" Vundle Plugin {{{
-" set the runtime path to include Vundle and initialize
-set rtp+=~/.vim/bundle/Vundle.vim
-call vundle#begin()
-" alternatively, pass a path where Vundle should install plugins
-"call vundle#begin('~/some/path/here')
-
-" let Vundle manage Vundle, required
-Plugin 'VundleVim/Vundle.vim'
+" Plug-in Plug {{{
+call plug#begin('~/.vim/plugged')
 
 " theme
-" Plugin 'challenger-deep-theme/vim', {'name': 'challenger-deep-theme'}
-Plugin 'sainnhe/sonokai'
+" Plug 'challenger-deep-theme/vim', {'name': 'challenger-deep-theme'}
+Plug 'sainnhe/sonokai'
 
 " edit
-Plugin 'godlygeek/tabular'
-Plugin 'preservim/nerdtree'
-Plugin 'Xuyuanp/nerdtree-git-plugin'
-Plugin 'preservim/nerdcommenter'
+Plug 'godlygeek/tabular'
+Plug 'preservim/nerdcommenter'
 
-Plugin 'preservim/vimux'
-Plugin 'benmills/vimux-golang'
+Plug 'preservim/nerdtree' |
+            \ Plug 'Xuyuanp/nerdtree-git-plugin'
+
+Plug 'preservim/vimux'
+Plug 'benmills/vimux-golang'
 
 " 检索文件， 类似 IDE 的 Command + p
-" Plugin 'ctrlpvim/ctrlp.vim'
+" Plug 'ctrlpvim/ctrlp.vim'
 
-Plugin 'SirVer/ultisnips'
-Plugin 'honza/vim-snippets'
-Plugin 'dyng/ctrlsf.vim'
-Plugin 'Valloric/MatchTagAlways'
+Plug 'SirVer/ultisnips'
+Plug 'honza/vim-snippets'
+Plug 'dyng/ctrlsf.vim'
+Plug 'Valloric/MatchTagAlways'
 
 " md & 预览
-Plugin 'plasticboy/vim-markdown'
-Plugin 'ellisonleao/glow.nvim'
+Plug 'plasticboy/vim-markdown'
+Plug 'ellisonleao/glow.nvim'
 
 " git
-Plugin 'airblade/vim-gitgutter'
-Plugin 'tpope/vim-fugitive'
-Plugin 'junegunn/gv.vim'
+Plug 'airblade/vim-gitgutter'
+Plug 'tpope/vim-fugitive'
+Plug 'junegunn/gv.vim'
 
 " go  使用 coc 中 coc-go 插件
-" Plugin 'fatih/vim-go'
+" Plug 'fatih/vim-go'
 
 " chinese 排版
-Plugin 'hotoo/pangu.vim'
+Plug 'hotoo/pangu.vim'
 
-Plugin 'maxbrunsfeld/vim-yankstack'
+Plug 'maxbrunsfeld/vim-yankstack'
 
 " Mark command to highlight several words in different colors simultaneously
-Plugin 'vim-scripts/Mark'
+Plug 'vim-scripts/Mark'
 
 " window
-Plugin 'wellle/visual-split.vim'
+Plug 'wellle/visual-split.vim'
 
 " Json
-Plugin 'diepm/vim-rest-console'
+Plug 'diepm/vim-rest-console'
 
-" Plugin 'elzr/vim-json'
+" Plug 'elzr/vim-json'
 
 " nvim syntax highlight
-" Plugin 'sheerun/vim-polyglot'
-Plugin 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}  " We recommend updating the parsers on update
+" Plug 'sheerun/vim-polyglot'
+Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}  " We recommend updating the parsers on update
 
-Plugin 'neoclide/coc.nvim', {'branch': 'release'}
+Plug 'neoclide/coc.nvim', {'branch': 'release'}
 
 " nvim lsp 
-" Plugin 'neovim/nvim-lspconfig'
+" Plug 'neovim/nvim-lspconfig'
 
 " statusline 
-Plugin 'itchyny/lightline.vim'
+Plug 'itchyny/lightline.vim'
 
 " nvim auto compeletion 
-" Plugin 'hrsh7th/nvim-cmp'
-" Plugin 'hrsh7th/cmp-nvim-lsp'
-" Plugin 'saadparwaiz1/cmp_luasnip'
-" Plugin 'L3MON4D3/LuaSnip'
+" Plug 'hrsh7th/nvim-cmp'
+" Plug 'hrsh7th/cmp-nvim-lsp'
+" Plug 'saadparwaiz1/cmp_luasnip'
+" Plug 'L3MON4D3/LuaSnip'
 
-Plugin 'folke/lua-dev.nvim'
+Plug 'folke/lua-dev.nvim'
 
-Plugin 'skywind3000/asyncrun.vim'
+Plug 'skywind3000/asyncrun.vim'
 
-Plugin 'freitass/todo.txt-vim'
+Plug 'freitass/todo.txt-vim'
 
 " 多光标支持， TheCW bilibili 多光标
-Plugin 'mg979/vim-visual-multi', {'branch': 'master'}
+Plug 'mg979/vim-visual-multi', {'branch': 'master'}
 
 " replacing tagbar , support LSP symbols
-Plugin 'liuchengxu/vista.vim'
+Plug 'liuchengxu/vista.vim'
 
 " fzf for vim 
-Plugin 'junegunn/fzf', { 'do': { -> fzf#install() } }
+Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 
-Plugin 'junegunn/fzf.vim'
+Plug 'junegunn/fzf.vim'
 
-Plugin 'ojroques/nvim-lspfuzzy'
+Plug 'ojroques/nvim-lspfuzzy'
 
 " 输入法莫斯自动切换设置 https://jdhao.github.io/2021/02/25/nvim_ime_mode_auto_switch/
-Plugin 'rlue/vim-barbaric'
+Plug 'rlue/vim-barbaric'
 
-Plugin 'akinsho/bufferline.nvim'
+Plug 'akinsho/bufferline.nvim'
 " Nerdtree 字体图标
-Plugin 'ryanoasis/vim-devicons'
-Plugin 'tiagofumo/vim-nerdtree-syntax-highlight'
+Plug 'ryanoasis/vim-devicons'
+Plug 'tiagofumo/vim-nerdtree-syntax-highlight'
 
-" All of your Plugins must be added before the following line
-call vundle#end()            " required
+" All of your Plugs must be added before the following line
+call plug#end()
 " }}}
-filetype plugin indent on    " required
+" filetype Plug indent on    " required
 " To ignore plugin indent changes, instead use:
 "filetype plugin on
-"
-" Brief help
-" :PluginList       - lists configured plugins
-" :PluginInstall    - installs plugins; append `!` to update or just :PluginUpdate
-" :PluginSearch foo - searches for foo; append `!` to refresh local cache
-" :PluginClean      - confirms removal of unused plugins; append `!` to auto-approve removal
-"
 " syntax highlight
 
 syntax  on
