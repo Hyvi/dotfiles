@@ -21,7 +21,7 @@ Plugin 'VundleVim/Vundle.vim'
 
 " theme
 " Plugin 'challenger-deep-theme/vim', {'name': 'challenger-deep-theme'}
-Plugin 'shaunsingh/solarized.nvim'
+Plugin 'sainnhe/sonokai'
 
 " edit
 Plugin 'godlygeek/tabular'
@@ -139,15 +139,10 @@ let g:vim_markdown_folding_disabled = 1
 "----------------------------------------------
 " Colors {{{
 "----------------------------------------------
-let g:solarized_italic_comments = v:true
-" let g:solarized_italic_keywords = v:true
-" let g:solarized_italic_functions = v:true
-" let g:solarized_italic_variables = v:false
-" let g:solarized_contrast = v:true
-" let g:solarized_borders = v:false
-" let g:solarized_disable_background = v:false
+let g:sonokai_style = 'andromeda'
+let g:sonokai_enable_italic = 1
 
-colorscheme solarized
+colorscheme sonokai
 
 if has('nvim') || has('termguicolors')
   set termguicolors
@@ -471,7 +466,7 @@ endfun
 " statusline  {{{
 "----------------------------------------------
 let g:lightline = {
-      \ 'colorscheme': 'selenized_light',
+      \ 'colorscheme': 'sonokai',
       \ 'active': {
       \   'left': [ [ 'mode', 'paste' ],
       \             [ 'gitbranch', 'readonly', 'filename', 'modified' ] ]
