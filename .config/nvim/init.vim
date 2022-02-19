@@ -4,9 +4,6 @@ source ~/.vimrc
 
 lua require("nvim-treesitter.install").prefer_git = true
 
-" In your init.lua or init.vim
-set termguicolors
-
 lua << EOF
 require("bufferline").setup{}
 EOF
