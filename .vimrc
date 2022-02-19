@@ -134,6 +134,8 @@ colorscheme sonokai
 if has('nvim') || has('termguicolors')
   set termguicolors
 endif
+
+hi CurrentWord ctermbg=236 guibg=#000080
 "  }}}
 
 "----------------------------------------------
