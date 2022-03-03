@@ -1,4 +1,5 @@
 {
+  "codeLens.enable": true,
   "diagnostic.checkCurrentLine": true,
   "languageserver": {
     "dls": {

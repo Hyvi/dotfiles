@@ -10,6 +10,7 @@ let mapleader=";"
 " filetype off                  " required
 
 " Plug-in Plug {{{
+set runtimepath+=~/.vim/plugged/vim-plug
 call plug#begin('~/.vim/plugged')
 
 " theme
@@ -42,9 +43,6 @@ Plug 'ellisonleao/glow.nvim'
 Plug 'airblade/vim-gitgutter'
 Plug 'tpope/vim-fugitive'
 Plug 'junegunn/gv.vim'
-
-" go  使用 coc 中 coc-go 插件
-" Plug 'fatih/vim-go'
 
 " chinese 排版
 Plug 'hotoo/pangu.vim'
@@ -213,9 +211,7 @@ noremap <C-l> 2k2<C-y>
 
 "" Buffer nav
 noremap <leader>z :bp<CR>
-" noremap <leader>q :bp<CR>
-" noremap <leader>x :bn<CR>
-" noremap <leader>w :bn<CR>
+noremap <leader>x :bn<CR>
 
 "" Close buffer
 noremap <leader>c :bd<CR>
@@ -366,50 +362,12 @@ nmap ghp <Plug>(GitGutterPreviewHunk)
 " }}}
 
 "----------------------------------------------
-" Language: Golang  vim-go {{{
+" Language: Golang  coc-go {{{
 "----------------------------------------------
-"使用版本v1.20, 最新master版本不稳定
 au FileType go set noexpandtab
 au FileType go set shiftwidth=4
 au FileType go set softtabstop=4
 au FileType go set tabstop=4
-
-" Mappings
-au FileType go nmap <F9> :GoCoverageToggle -short<cr>
-au Filetype go nmap <leader>ga <Plug>(go-alternate-edit)
-au Filetype go nmap <leader>gah <Plug>(go-alternate-split)
-au Filetype go nmap <leader>gav <Plug>(go-alternate-vertical)
-au FileType go nmap <leader>gg :GoDeclsDir<cr>
-au FileType go nmap <leader>gc <Plug>(go-coverage-toggle)
-au FileType go nmap <leader>v <Plug>(go-def-vertical)
-au FileType go nmap <leader>h <Plug>(go-def-split)
-au FileType go nmap <leader>x <Plug>(go-doc-vertical)
-" au FileType go nmap <leader>r <Plug>(go-referrers)
-" autocmd FileType go nmap <silent> <Leader>gd <Plug>(go-def-tab)
-" autocmd FileType go nmap <silent> <leader>gt  <Plug>(go-test)
-" autocmd FileType go nmap <silent> <leader>gr  <Plug>(go-run)
-
-
-let g:go_doc_popup_window = 1
-
-" Set ultisnips as snippet engine
-let g:go_snippet_engine = "ultisnips"
-
-" Set whether the JSON tags should be snakecase or camelcase
-let g:go_addtags_transform = "snakecase"
-
-" let g:go_metalinter_autosave = 1
-
-" Identifier highlighting
-" https://github.com/fatih/vim-go/wiki/Tutorial#identifier-highlighting
-" 提示错误
-" let g:go_auto_sameids = 1
-
-" Identifier resolution
-" https://github.com/fatih/vim-go/wiki/Tutorial#identifier-resolution
-" 与错误提示冲突了，so 不启用改功能
-" let g:go_auto_type_info = 1
-"
 " }}}
 
 "----------------------------------------------
