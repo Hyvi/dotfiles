@@ -404,9 +404,10 @@ endfun
 " vim-yankstack {{{
 " ref: https://www.0value.com/my-go-centric-vim-setup
 " ref: https://github.com/neovim/neovim/issues/2379, enable meta key
-" use defualt Key Mappings
-" nmap <leader>p <Plug>yankstack_substitute_older_paste
-" nmap <leader>P <Plug>yankstack_substitute_newer_paste
+vnoremap <M-p>  ^[p   " rotate yanks forward
+vnoremap <M-P>  ^[P   " rotate yanks backward
+" note that, the ^[ is an Esc char that comes before the 'p'
+" In most default configurations, ^[p may be typed by pressing first <C-v>, then <M-p>
 " }}}
 
 "----------------------------------------------
