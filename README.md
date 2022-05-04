@@ -17,9 +17,12 @@ Using a bare Git repository to track dotfiles<sup>[1]</sup>
 python3 -m pip install --user --upgrade pynvim 
 ``` 
 
-## Vundle 安装
+## Plug 安装
 ```bash
-git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim
+
+curl -fLo ~/.vim/autoload/plug.vim --create-dirs \
+    https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+
 ```
 
 ##  Ftplugin
@@ -54,30 +57,8 @@ A light and configurable statusline/tabline plugin for Vim
 配置文件 coc-setting.json (~/.config/nvim) 目录下。
 
 ### coc-diagnostic
-
+取代了通过lspconfig方式来配置
 ### coc-go
-
-## lspconfig 
-A collection of common configurations for Neovim's built-in language server client.
-
-### gopls 
-确认 gopls 已经安装了
-
-### golangci_lint_ls
-```bash 
-go install github.com/nametake/golangci-lint-langserver@latest
-go install github.com/golangci/golangci-lint/cmd/golangci-lint@v1.42.1
-```
-
-TODO：默认是 `--enable-all` 如何自定义的检查的工具
-
-### sumneko_lua
-```
-brew install lua-language-server
-```
-
-### nvim-comp
-Neovim does not support built-in autocompletion. As mentioned in the readme, you can bind the completion results to omnifunc for on-demand completion. To use autocompletion, please use an external plugin. We recommend nvim-cmp, the successor/rewrite of nvim-compe. <sup>[5]</sup>
 
 ## vim-barbaric 输入法
 如何离开 insert 模式的时候自动切换到英文输入
