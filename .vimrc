@@ -43,6 +43,8 @@ Plug 'ellisonleao/glow.nvim'
 Plug 'airblade/vim-gitgutter'
 Plug 'tpope/vim-fugitive'
 Plug 'junegunn/gv.vim'
+Plug 'tpope/vim-rhubarb'
+
 
 " chinese 排版
 Plug 'hotoo/pangu.vim'
