@@ -8,6 +8,13 @@ if [ -f $HOME/.bashrc ]; then
   source $HOME/.bashrc
 fi
 
+# Difference Between .bashrc, .bash-profile, and .profile
+# https://www.baeldung.com/linux/bashrc-vs-bash-profile-vs-profile
+if [ -f $HOME/.profile ]; then 
+  source $HOME/.profile
+fi
+
+
 # Path to your oh-my-zsh installation.
 export ZSH="$HOME/.oh-my-zsh"
 
