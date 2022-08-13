@@ -110,12 +110,6 @@ Plug 'tiagofumo/vim-nerdtree-syntax-highlight'
 " All of your Plugs must be added before the following line
 call plug#end()
 " }}}
-" filetype Plug indent on    " required
-" To ignore plugin indent changes, instead use:
-"filetype plugin on
-" syntax highlight
-
-syntax  on
 
 " see :h vundle for more details or wiki for FAQ
 " Put your non-Plugin stuff after this line
@@ -687,7 +681,7 @@ nnoremap <silent><nowait> <space>k  :<C-u>CocPrev<CR>
 " Resume latest coc list.
 nnoremap <silent><nowait> <space>p  :<C-u>CocListResume<CR>
 
-let g:coc_global_extensions = ['coc-json', 'coc-go', 'coc-pyright', 'coc-diagnostic', 'coc-solargraph']
+let g:coc_global_extensions = ['coc-json', 'coc-go', 'coc-pyright', 'coc-diagnostic', 'coc-solargraph', 'coc-markmap']
 " }}}
 "
 "----------------------------------------------
@@ -697,6 +691,7 @@ au FileType json set expandtab
 au FileType json set shiftwidth=2 
 au FileType json set softtabstop=2
 au FileType json set tabstop=2
+au FileType json set foldmethod=indent
 " }}}
 
 " vim: foldmethod=marker
