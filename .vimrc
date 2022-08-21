@@ -89,6 +89,8 @@ Plug 'freitass/todo.txt-vim'
 " 多光标支持， TheCW bilibili 多光标
 Plug 'mg979/vim-visual-multi', {'branch': 'master'}
 
+Plug 'github/copilot.vim'
+
 " replacing tagbar , support LSP symbols
 Plug 'liuchengxu/vista.vim'
 
@@ -113,9 +115,6 @@ call plug#end()
 
 " see :h vundle for more details or wiki for FAQ
 " Put your non-Plugin stuff after this line
-"
-let g:vim_markdown_folding_disabled = 1
-
 
 "----------------------------------------------
 " Colors {{{
@@ -692,6 +691,15 @@ au FileType json set shiftwidth=2
 au FileType json set softtabstop=2
 au FileType json set tabstop=2
 au FileType json set foldmethod=indent
+" }}}
+
+"----------------------------------------------
+" Language: markdown  {{{
+"---------------------------------------------- 
+" let g:vim_markdown_folding_disabled = 1
+" enable folding for markdown
+let g:markdown_enable_folding = 1
+let g:markdown_folding_level = 3
 " }}}
 
 " vim: foldmethod=marker
