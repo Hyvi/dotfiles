@@ -151,4 +151,4 @@ export PATH="$HOME/.yarn/bin:$HOME/.config/yarn/global/node_modules/.bin:$PATH"
 
 alias tsm="transmission-remote"
 alias n='nvim'
-alias ssheks="ssh -i ~/Documents/eks-pc-cloud/mac-esk.cer  ubuntu@ec2-3-88-108-26.compute-1.amazonaws.com"
+alias ssheks="ssh -i  ~/Documents/eks-pc-cloud/remote-ubuntu-sa.cer  ubuntu@ec2-18-140-197-70.ap-southeast-1.compute.amazonaws.com"
