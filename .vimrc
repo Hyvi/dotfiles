@@ -80,7 +80,7 @@ Plug 'itchyny/lightline.vim'
 " Plug 'saadparwaiz1/cmp_luasnip'
 " Plug 'L3MON4D3/LuaSnip'
 
-Plug 'folke/lua-dev.nvim'
+" Plug 'folke/lua-dev.nvim'
 
 Plug 'skywind3000/asyncrun.vim'
 
