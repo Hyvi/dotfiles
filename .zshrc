@@ -5,13 +5,13 @@ export PATH=$HOME/go/bin:$PATH
 # zsh读取的配置文件：~/.zshrc文件
 # 当从bash切换为zsh时，如果不想重新配置一遍.zshrc文件，可以在.zshrc文件中加上source ~/.bash_profile;直接从.bash_profile文件读取配置。
 if [ -f $HOME/.bashrc ]; then 
-  source $HOME/.bashrc
+#  source $HOME/.bashrc
 fi
 
 # Difference Between .bashrc, .bash-profile, and .profile
 # https://www.baeldung.com/linux/bashrc-vs-bash-profile-vs-profile
 if [ -f $HOME/.profile ]; then 
-  source $HOME/.profile
+#  source $HOME/.profile
 fi
 
 
