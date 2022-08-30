@@ -151,7 +151,7 @@ export PATH="$HOME/.yarn/bin:$HOME/.config/yarn/global/node_modules/.bin:$PATH"
 
 alias tsm="transmission-remote"
 alias n='nvim'
-alias ssheks="ssh -i  ~/Documents/eks-pc-cloud/remote-ubuntu-sa.cer  ubuntu@ec2-18-140-197-70.ap-southeast-1.compute.amazonaws.com"
+alias ssheks="ssh -i  ~/Documents/eks-pc-cloud/remote-ubuntu-sa.cer  ubuntu@ec2-13-214-156-161.ap-southeast-1.compute.amazonaws.com"
 
 # Add RVM to PATH for scripting. Make sure this is the last PATH variable change.
 export PATH="$PATH:$HOME/.rvm/bin"
