@@ -56,6 +56,7 @@ if which node > /dev/null
        echo "node is installed, skipping..."
    else
        # add deb.nodesource repo commands
+       echo "node is not installed, exit..."
        exit
        # install node
    fi
@@ -64,7 +65,7 @@ if which node > /dev/null
 
 if which yarn > /dev/null
    then
-       echo "node is installed, skipping..."
+       echo "yarn is installed, skipping..."
    else
        curl --compressed -o- -L https://yarnpkg.com/install.sh | bash
    fi

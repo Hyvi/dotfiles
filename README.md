@@ -26,12 +26,7 @@ curl -fLo ~/.vim/autoload/plug.vim --create-dirs \
 ```
 
 ##  Ftplugin
-目录下是各种文件类型的配置，安装方式如下
-```bash
-git clone https://github.com/Hyvi/vim-plugin.git
-# 或者 mv vim-plugin/ftpugin ~/.vim/
-ln -s vim-plugin/ftplugin ~/.vim/ftplugin
-````
+目录下是各种文件类型的配置
 
 ## vista.vim 
 取代 tagbar，vista.vim 支持 LSP 也支持 ctags。通过 `Vista` 开启。
