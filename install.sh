@@ -19,9 +19,6 @@ if [ "$(uname)" == "Darwin" ]; then
   curl -o /usr/local/bin/xkbswitch https://raw.githubusercontent.com/myshov/xkbswitch-macosx/master/bin/xkbswitch
   chmod a+x /usr/local/bin/xkbswitch
 
-  # 安装 fzf
-  brew install fzf
-  $(brew --prefix)/opt/fzf/install
   brew install bat  # preview 高亮显示
   
   # vista.vim 插件使用 ctags 
@@ -36,11 +33,15 @@ else
   sudo apt  install -y jq
  
   sudo apt-get -y install exuberant-ctags
-  sudo apt-get -y install fzf
 
   sudo apt-get install -y zsh
   sudo apt-get install -y neovim
 fi
+
+# 安装 fzf and auto-completion and key-bindings 
+git clone --depth 1 https://github.com/junegunn/fzf.git ~/.fzf
+~/.fzf/install
+
 # 安装 lsp server 
 
 # golang 
