@@ -6,6 +6,9 @@ curl -fLo ~/.vim/autoload/plug.vim --create-dirs \
     https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
 
 # 安装 nvim python3 插件的支持
+sudo apt-get update \
+    && apt-get install -y python3-pip
+
 python3 -m pip install --user --upgrade pynvim 
 
 if [ "$(uname)" == "Darwin" ]; then
@@ -29,8 +32,9 @@ if [ "$(uname)" == "Darwin" ]; then
   brew install --cask font-hack-nerd-font
 
 else
-  sudo apt  install  -y ripgrep
-  sudo apt  install -y jq
+  sudo apt-get -y update
+  sudo apt-get  install  -y ripgrep
+  sudo apt-get  install -y jq
  
   sudo apt-get -y install exuberant-ctags
 
