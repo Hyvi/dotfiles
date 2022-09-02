@@ -7,7 +7,7 @@ curl -fLo ~/.vim/autoload/plug.vim --create-dirs \
 
 # 安装 nvim python3 插件的支持
 sudo apt-get update \
-    && apt-get install -y python3-pip
+    && sudo apt-get install -y python3-pip
 
 python3 -m pip install --user --upgrade pynvim 
 
@@ -48,9 +48,6 @@ git clone --depth 1 https://github.com/junegunn/fzf.git ~/.fzf
 
 # 安装 lsp server 
 
-# golang 
-go install github.com/nametake/golangci-lint-langserver@latest
-go install github.com/golangci/golangci-lint/cmd/golangci-lint@v1.42.1
 # python
 pip3 install pyright
 
@@ -60,8 +57,7 @@ if which node > /dev/null
        echo "node is installed, skipping..."
    else
        # add deb.nodesource repo commands
-       echo "node is not installed, exit..."
-       exit
+       sudo apt-get install -y nodejs npm
        # install node
    fi
 
