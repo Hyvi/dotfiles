@@ -33,12 +33,15 @@ if [ "$(uname)" == "Darwin" ]; then
 
 else
   sudo apt-get -y update
-  sudo apt-get  install  -y ripgrep
+  sudo apt-get  install  -y ripgrep tmux
   sudo apt-get  install -y jq
  
   sudo apt-get -y install exuberant-ctags
 
   sudo apt-get install -y zsh
+  # install latest neovim
+  sudo apt-get install -y software-properties-common
+  sudo add-apt-repository -y ppa:neovim-ppa/stable
   sudo apt-get install -y neovim
 fi
 
@@ -57,6 +60,7 @@ if which node > /dev/null
        echo "node is installed, skipping..."
    else
        # add deb.nodesource repo commands
+       curl -sL https://deb.nodesource.com/setup_14.x | sudo bash -
        sudo apt-get install -y nodejs npm
        # install node
    fi
@@ -76,6 +80,6 @@ yarn global add diagnostic-languageserver
 
 
 # oh-my-zsh
-sh -c "$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
+# sh -c "$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
 
 git --git-dir=$HOME/dotfiles/ --work-tree=$HOME checkout ~/.zshrc
