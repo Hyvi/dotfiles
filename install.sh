@@ -54,32 +54,4 @@ git clone --depth 1 https://github.com/junegunn/fzf.git ~/.fzf
 # python
 pip3 install pyright
 
-# check node
-if which node > /dev/null
-   then
-       echo "node is installed, skipping..."
-   else
-       # add deb.nodesource repo commands
-       curl -sL https://deb.nodesource.com/setup_14.x | sudo bash -
-       sudo apt-get install -y nodejs npm
-       # install node
-   fi
-
-# 安装 yarn 
-
-if which yarn > /dev/null
-   then
-       echo "yarn is installed, skipping..."
-   else
-       curl --compressed -o- -L https://yarnpkg.com/install.sh | bash
-   fi
-
-
-# 安装 错误检测， 比如 golangci-linter
-yarn global add diagnostic-languageserver
-
-
-# oh-my-zsh
-# sh -c "$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
-
 git --git-dir=$HOME/dotfiles/ --work-tree=$HOME checkout ~/.zshrc
