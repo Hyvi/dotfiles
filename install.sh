@@ -43,6 +43,14 @@ else
   sudo apt-get install -y software-properties-common
   sudo add-apt-repository -y ppa:neovim-ppa/stable
   sudo apt-get install -y neovim
+
+  # 重复安装, 仅保留这里
+  set -euo pipefail \
+    && curl -sL https://deb.nodesource.com/setup_14.x | sudo bash - \
+    && sudo apt-get install -y nodejs \
+    && curl --compressed -o- -L https://yarnpkg.com/install.sh | bash \
+    && $HOME/.yarn/bin/yarn global add diagnostic-languageserver
+
 fi
 
 # 安装 fzf and auto-completion and key-bindings 
@@ -55,3 +63,6 @@ git clone --depth 1 https://github.com/junegunn/fzf.git ~/.fzf
 pip3 install pyright
 
 git --git-dir=$HOME/dotfiles/ --work-tree=$HOME checkout ~/.zshrc
+
+nvim --headless +PlugInstall +qa
+nvim +UpdateRemotePlugins +qa
