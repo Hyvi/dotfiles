@@ -15,7 +15,7 @@ call plug#begin('~/.vim/plugged')
 
 " theme
 " Plug 'challenger-deep-theme/vim', {'name': 'challenger-deep-theme'}
-Plug 'sainnhe/sonokai'
+Plug 'altercation/vim-colors-solarized'
 
 " edit
 Plug 'godlygeek/tabular'
@@ -119,10 +119,9 @@ call plug#end()
 "----------------------------------------------
 " Colors {{{
 "----------------------------------------------
-let g:sonokai_style = 'andromeda'
-let g:sonokai_enable_italic = 1
-
-colorscheme sonokai
+set background=light
+colorscheme solarized
+let g:solarized_termcolors=256
 
 if has('nvim') || has('termguicolors')
   set termguicolors
@@ -413,7 +412,7 @@ vnoremap <M-P>  ^[P   " rotate yanks backward
 " statusline  {{{
 "----------------------------------------------
 let g:lightline = {
-      \ 'colorscheme': 'sonokai',
+      \ 'colorscheme': 'solarized',
       \ 'active': {
       \   'left': [ [ 'mode', 'paste' ],
       \             [ 'gitbranch', 'readonly', 'filename', 'modified' ] ]
