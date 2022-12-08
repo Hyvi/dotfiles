@@ -98,7 +98,7 @@ fzf is a general-purpose command-line fuzzy finder.
 Challenger Deep Theme for VIM, 切换到颜色突出的主题
 
 # 字体
-mononoki 
+Hack Regular Nerd Font Complete Mono
 
 # 参考
 
