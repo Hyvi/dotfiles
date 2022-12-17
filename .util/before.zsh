@@ -1,3 +1,5 @@
+# Set global Solarized dark/light toggle
+export SOLARIZED="light"
 
 # If you come from bash you might have to change your $PATH.
 export PATH=$HOME/go/bin:$PATH
