@@ -95,7 +95,9 @@ fzf is a general-purpose command-line fuzzy finder.
 ## Colorscheme 设置
 ~~参考 airblade vim 的设置，更改 Vim 的 colorscheme 为 NeoDark 黑色主题，为了保持 Iterm 2 的主题和 Vim 一致， 使用 [NeoDark.itermcolors](https://github.com/KeitaNakamura/neodark.vim/blob/master/terms/NeoDark.itermcolors) 修改 Iterm 2 的主题。~~
 
-Challenger Deep Theme for VIM, 切换到颜色突出的主题
+~~Challenger Deep Theme for VIM, 切换到颜色突出的主题~~
+
+Solarzie (light) 
 
 # 字体
 Hack Regular Nerd Font Complete Mono
