@@ -238,7 +238,7 @@ let g:NERDTrimTrailingWhitespace = 1
 " 查看工程文件列表
 " Plug 'scrooloose/nerdtree'
 " 使用 NERDTree 插件查看工程文件。设置快捷键，速记：file list
-nmap <Leader>fl :NERDTreeToggle<CR>
+nmap <Leader>fl :silent! NERDTreeToggle<CR>
 
 nnoremap <silent> <F2> :NERDTreeFind<CR>
 
