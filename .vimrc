@@ -104,9 +104,9 @@ Plug 'ojroques/nvim-lspfuzzy'
 " 输入法莫斯自动切换设置 https://jdhao.github.io/2021/02/25/nvim_ime_mode_auto_switch/
 Plug 'rlue/vim-barbaric'
 
-Plug 'akinsho/bufferline.nvim'
+" Plug 'akinsho/bufferline.nvim'
 " Nerdtree 字体图标
-Plug 'ryanoasis/vim-devicons'
+" Plug 'ryanoasis/vim-devicons'
 Plug 'tiagofumo/vim-nerdtree-syntax-highlight'
 
 " All of your Plugs must be added before the following line
