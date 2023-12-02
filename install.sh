@@ -9,7 +9,7 @@ curl -fLo ~/.vim/autoload/plug.vim --create-dirs \
 sudo apt-get update \
     && sudo apt-get install -y python3-pip
 
-python3 -m pip install --user --upgrade pynvim 
+python3 -m pip install --user --upgrade pynvim
 
 if [ "$(uname)" == "Darwin" ]; then
   brew install jq

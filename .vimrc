@@ -89,7 +89,7 @@ Plug 'freitass/todo.txt-vim'
 " 多光标支持， TheCW bilibili 多光标
 Plug 'mg979/vim-visual-multi', {'branch': 'master'}
 
-" Plug 'github/copilot.vim'
+Plug 'github/copilot.vim'
 
 " replacing tagbar , support LSP symbols
 Plug 'liuchengxu/vista.vim'
@@ -704,6 +704,17 @@ au FileType json set foldmethod=indent
 " enable folding for markdown
 let g:markdown_enable_folding = 1
 let g:markdown_folding_level = 3
+" }}}
+
+
+"----------------------------------------------
+" Copilot  {{{
+"---------------------------------------------- 
+let g:copilot_filetypes = {
+	\ 'yaml': v:true,
+	\ }
+let b:copilot_enabled = v:true
+
 " }}}
 
 " vim: foldmethod=marker
