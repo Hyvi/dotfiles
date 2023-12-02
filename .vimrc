@@ -119,7 +119,7 @@ call plug#end()
 "----------------------------------------------
 " Colors {{{
 "----------------------------------------------
-set background=light
+set background=dark
 colorscheme solarized
 let g:solarized_termcolors=256
 
