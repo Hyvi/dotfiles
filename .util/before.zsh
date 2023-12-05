@@ -158,3 +158,4 @@ alias ssheks="ssh -i  ~/Documents/eks-pc-cloud/remote-ubuntu-sa.cer  ubuntu@ec2-
 export PATH="$PATH:$HOME/.rvm/bin"
 export PATH="$PATH:$HOME/.local/bin"
 
+ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE='fg=yellow'
