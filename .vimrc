@@ -712,6 +712,7 @@ let g:markdown_folding_level = 3
 "---------------------------------------------- 
 let g:copilot_filetypes = {
 	\ 'yaml': v:true,
+	\ 'markdown': v:true,
 	\ }
 let b:copilot_enabled = v:true
 
