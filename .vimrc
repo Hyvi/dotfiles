@@ -15,7 +15,9 @@ call plug#begin('~/.vim/plugged')
 
 " theme
 " Plug 'challenger-deep-theme/vim', {'name': 'challenger-deep-theme'}
-Plug 'altercation/vim-colors-solarized'
+" Plug 'altercation/vim-colors-solarized'
+Plug 'Tsuzat/NeoSolarized.nvim', { 'branch': 'master' }
+
 
 " edit
 Plug 'godlygeek/tabular'
@@ -120,7 +122,7 @@ call plug#end()
 " Colors {{{
 "----------------------------------------------
 set background=dark
-colorscheme solarized
+colorscheme NeoSolarized
 let g:solarized_termcolors=256
 
 if has('nvim') || has('termguicolors')
