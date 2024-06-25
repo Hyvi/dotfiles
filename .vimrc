@@ -202,8 +202,8 @@ nnoremap <c-J> <C-W>j    " 跳转至下方的子窗口
 "  nmap <Leader>M %              " 定义快捷键在结对符之间跳转
 
 " scrolling without changing cursors on-screen position
-noremap <C-k> 2j2<C-e>
-noremap <C-l> 2k2<C-y>
+noremap <C-j> 2j2<C-e>
+noremap <C-k> 2k2<C-y>
 
 "" Buffer nav
 noremap <leader>z :bp<CR>
@@ -713,11 +713,14 @@ let g:markdown_folding_level = 3
 " Copilot  {{{
 "---------------------------------------------- 
 let g:copilot_filetypes = {
-	\ 'yaml': v:true,
-	\ 'markdown': v:true,
+        \ '*': v:true,
 	\ }
 let b:copilot_enabled = v:true
 
+imap <C-L> <Plug>(copilot-accept-word)
+" 开启后导致esc键出无法退出插入模式, 临时关闭
+" imap <C-]> <Plug>(copilot-next)
+" imap <C-[> <Plug>(copilot-previous)
 " }}}
 
 " vim: foldmethod=marker
