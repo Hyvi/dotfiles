@@ -93,13 +93,16 @@ Plug 'mg979/vim-visual-multi', {'branch': 'master'}
 
 Plug 'github/copilot.vim'
 
+Plug 'nvim-lua/plenary.nvim'
+Plug 'CopilotC-Nvim/CopilotChat.nvim', { 'branch': 'canary' }
+
 " replacing tagbar , support LSP symbols
 Plug 'liuchengxu/vista.vim'
 
 " fzf for vim 
 Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 
-Plug 'junegunn/fzf.vim'
+Plug 'ibhagwan/fzf-lua', {'branch': 'main'}
 
 Plug 'ojroques/nvim-lspfuzzy'
 
@@ -483,7 +486,7 @@ nnoremap <leader>fv :Vista!!<CR>
 " }}}
 
 "----------------------------------------------
-"  fzf.vim {{{
+"  fzf.luz {{{
 "----------------------------------------------
 lua require('lspfuzzy').setup {}
 
@@ -502,11 +505,9 @@ if executable('rg')
   command! -bang -nargs=* Find call fzf#vim#grep('rg --column --line-number --no-heading --fixed-strings --ignore-case --hidden --follow --glob "!.git/*" --color "always" '.shellescape(<q-args>).'| tr -d "\017"', 1, <bang>0)
 endif
 
-cnoremap <C-P> <C-R>=expand("%:p:h") . "/" <CR>
-nnoremap <silent> <leader>b :Buffers<CR>
+nnoremap <silent> <leader>b <cmd>lua require('fzf-lua').buffers()<CR>
 nnoremap <silent> <leader>e :FZF -m<CR>
-"Recovery commands from history through FZF
-nmap <leader>y :History:<CR>
+nmap <leader>y <cmd>lua require('fzf-lua').command_history()<CR>
 " }}}
 
 
@@ -718,9 +719,16 @@ let g:copilot_filetypes = {
 let b:copilot_enabled = v:true
 
 imap <C-L> <Plug>(copilot-accept-word)
+imap <C-]> <Plug>(copilot-next)
 " 开启后导致esc键出无法退出插入模式, 临时关闭
-" imap <C-]> <Plug>(copilot-next)
 " imap <C-[> <Plug>(copilot-previous)
+" }}}
+
+"----------------------------------------------
+"Copliot Chat  {{{
+"----------------------------------------------
+nnoremap <leader>cce <cmd>CopilotChatExplain<cr>
+nnoremap <leader>cct <cmd>CopilotChatTests<cr>
 " }}}
 
 " vim: foldmethod=marker

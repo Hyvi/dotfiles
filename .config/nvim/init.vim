@@ -5,6 +5,7 @@ source ~/.vimrc
 lua require("nvim-treesitter.install").prefer_git = true
 
 lua require('plugins')
+lua require('copilot')
 
 " vim: foldmethod=marker ts=2 sw=2 et
 
