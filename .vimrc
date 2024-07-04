@@ -195,12 +195,7 @@ nnoremap <Leader>w :w<CR>         " 定义快捷键保存当前窗口内容
 nnoremap <Leader>WQ :wa<CR>:q<CR> " 定义快捷键保存所有窗口内容并退出 vim
 nnoremap <Leader>Q :qa!<CR>       " 不做任何保存，直接退出 vim
 
-" 设置快捷键遍历子窗口
-" nnoremap nw <C-W><C-W>        " 依次遍历,这样设置影响·n·跳转到下一个的速度
-nnoremap <C-L> <C-W>l    " 跳转至右方的窗口
-nnoremap <C-H> <C-W>h    " 跳转至方的窗口
-nnoremap <C-K> <C-W>k    " 跳转至上方的子窗口
-nnoremap <c-J> <C-W>j    " 跳转至下方的子窗口
+nnoremap nw <C-W><C-W>        " 依次遍历,这样设置影响·n·跳转到下一个的速度
 
 "  nmap <Leader>M %              " 定义快捷键在结对符之间跳转
 
