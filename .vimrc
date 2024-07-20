@@ -100,7 +100,7 @@ Plug 'CopilotC-Nvim/CopilotChat.nvim', { 'branch': 'canary' }
 Plug 'liuchengxu/vista.vim'
 
 " fzf for vim 
-Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
+" Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 
 Plug 'ibhagwan/fzf-lua', {'branch': 'main'}
 
@@ -126,6 +126,11 @@ call plug#end()
 "----------------------------------------------
 set background=dark
 colorscheme NeoSolarized
+let g:neosolarized_contrast = "high"
+let g:neosolarized_bold = 1
+let g:neosolarized_underline = 1
+let g:neosolarized_italic = 1
+
 let g:solarized_termcolors=256
 
 if has('nvim') || has('termguicolors')
@@ -682,7 +687,7 @@ nnoremap <silent><nowait> <space>k  :<C-u>CocPrev<CR>
 " Resume latest coc list.
 nnoremap <silent><nowait> <space>p  :<C-u>CocListResume<CR>
 
-let g:coc_global_extensions = ['coc-json', 'coc-go', 'coc-pyright', 'coc-diagnostic', 'coc-solargraph', 'coc-markmap']
+let g:coc_global_extensions = ['coc-json', 'coc-go', 'coc-pyright', 'coc-diagnostic', 'coc-solargraph', 'coc-markmap', 'coc-lua']
 " }}}
 "
 "----------------------------------------------
