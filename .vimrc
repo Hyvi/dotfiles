@@ -729,7 +729,7 @@ imap <C-]> <Plug>(copilot-next)
 "----------------------------------------------
 nnoremap <leader>cce <cmd>CopilotChatExplain<cr>
 nnoremap <leader>cct <cmd>CopilotChatTests<cr>
-nnoremap <leader>cc <cmd>CopilotChatOpen<cr>
+nnoremap <leader>ccc <cmd>CopilotChatOpen<cr>
 " }}}
 
 " vim: foldmethod=marker
