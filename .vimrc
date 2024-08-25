@@ -479,9 +479,9 @@ let g:vista#renderer#enable_icon = 0
 let g:vista_update_on_text_changed = 1
 let g:vista_close_on_jump = 2
 let g:vista_disable_statusline = 1
-let g:vista_sidebar_width = 60
+" let g:vista_sidebar_width = 60
 
-nnoremap <leader>fs :Vista finder<CR>
+" nnoremap <leader>fs :Vista finder<CR>
 nnoremap <leader>fv :Vista!!<CR>
 " }}}
 
@@ -729,6 +729,7 @@ imap <C-]> <Plug>(copilot-next)
 "----------------------------------------------
 nnoremap <leader>cce <cmd>CopilotChatExplain<cr>
 nnoremap <leader>cct <cmd>CopilotChatTests<cr>
+nnoremap <leader>cc <cmd>CopilotChatOpen<cr>
 " }}}
 
 " vim: foldmethod=marker
