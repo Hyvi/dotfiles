@@ -506,7 +506,7 @@ if executable('rg')
 endif
 
 nnoremap <silent> <leader>b <cmd>lua require('fzf-lua').buffers()<CR>
-nnoremap <silent> <leader>e :FZF -m<CR>
+nnoremap <silent> <leader>e <cmd>lua require('fzf-lua').files()<CR>
 nmap <leader>y <cmd>lua require('fzf-lua').command_history()<CR>
 " }}}
 

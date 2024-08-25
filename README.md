@@ -87,7 +87,7 @@ zsh-users / zsh-autosuggestions，需要手动安装到 oh-my-zsh/custom/plugins
 ## zsh-syntax-highlighting
 zsh-users / zsh-syntax-highlighting
 
-# fzf & fzf.vim & nvim-lspfuzzy
+# fzf & fzf.lua & nvim-lspfuzzy
 fzf is a general-purpose command-line fuzzy finder. 
 
 # Iterm 2

@@ -54,6 +54,7 @@ else
 fi
 
 # 安装 fzf and auto-completion and key-bindings 
+# Ubuntu 自带的 fzf 版本太低, 无法使用
 git clone --depth 1 https://github.com/junegunn/fzf.git ~/.fzf
 ~/.fzf/install
 

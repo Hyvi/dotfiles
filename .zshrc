@@ -55,3 +55,4 @@ load_module ~/.util/after.sh
 # for module in ~/.util/functions/*.sh; do
   # load_module $module
 # done
+
