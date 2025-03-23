@@ -1,11 +1,5 @@
 !!! Nvim from Vim
 
-Nvim 配置，持续更新
-
-参考 yanzhang0219 / dotfiles 之后，决定使用 bare Git Repo 方式来管理配置文件
-
-Using a bare Git repository to track dotfiles<sup>[1]</sup>
-
 # Nvim Install
 子标题为各个插件的安装注意项。
 
@@ -17,19 +11,8 @@ Using a bare Git repository to track dotfiles<sup>[1]</sup>
 python3 -m pip install --user --upgrade pynvim 
 ``` 
 
-## Plug 安装
-```bash
-
-curl -fLo ~/.vim/autoload/plug.vim --create-dirs \
-    https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
-
-```
-
 ##  Ftplugin
 目录下是各种文件类型的配置
-
-## vista.vim 
-取代 tagbar，vista.vim 支持 LSP 也支持 ctags。通过 `Vista` 开启。
 
 ## vim-rest-console
 默认使用 `python -m json.tool` 来格式，存在以下问题：
@@ -42,25 +25,6 @@ curl -fLo ~/.vim/autoload/plug.vim --create-dirs \
 ```bash
 brew install jq
 ```
-
-## lightline.vim
-A light and configurable statusline/tabline plugin for Vim
-
-结合主题 Challenger Deep Theme for VIM 使用。
-
-## Coc.vim 
-配置文件 coc-setting.json (~/.config/nvim) 目录下。
-
-### coc-diagnostic
-取代了通过lspconfig方式来配置
-### coc-go
-
-## vim-barbaric 输入法
-如何离开 insert 模式的时候自动切换到英文输入
-
-## vim-yankstack
-A lightweight implementation of emacs's kill-ring for vim。循环遍历“yank and delete thing”。
-
 ## junegunn/gv.vim
 更方便查看某个文件或某行的更新历史
 
@@ -83,24 +47,6 @@ sudo chown -R root:staff /usr/local/share/zsh
 ## Zsh-autosuggestions
 zsh-users / zsh-autosuggestions，需要手动安装到 oh-my-zsh/custom/plugins/ 目录下。
 
-
-## zsh-syntax-highlighting
-zsh-users / zsh-syntax-highlighting
-
-# fzf & fzf.lua & nvim-lspfuzzy
-fzf is a general-purpose command-line fuzzy finder. 
-
-# Iterm 2
-
-## Colorscheme 设置
-~~参考 airblade vim 的设置，更改 Vim 的 colorscheme 为 NeoDark 黑色主题，为了保持 Iterm 2 的主题和 Vim 一致， 使用 [NeoDark.itermcolors](https://github.com/KeitaNakamura/neodark.vim/blob/master/terms/NeoDark.itermcolors) 修改 Iterm 2 的主题。~~
-
-~~Challenger Deep Theme for VIM, 切换到颜色突出的主题~~
-
-Solarzie (light) 
-
-# 字体
-Hack Regular Nerd Font Complete Mono
 
 # 参考
 

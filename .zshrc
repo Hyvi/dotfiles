@@ -56,3 +56,5 @@ load_module ~/.util/after.sh
   # load_module $module
 # done
 
+
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh

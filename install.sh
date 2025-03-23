@@ -1,9 +1,6 @@
 #! /bin/bash
 # Auth: hyvitan
 
-# 安装 Plug 
-curl -fLo ~/.vim/autoload/plug.vim --create-dirs \
-    https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
 
 # 安装 nvim python3 插件的支持
 sudo apt-get update \
@@ -32,18 +29,10 @@ if [ "$(uname)" == "Darwin" ]; then
   brew install --cask font-hack-nerd-font
 
 else
+  sudo add-apt-repository ppa:neovim-ppa/unstable -y
   sudo apt-get -y update
-  sudo apt-get  install  -y ripgrep tmux
-  sudo apt-get  install -y jq
- 
-  sudo apt-get -y install exuberant-ctags
 
-  sudo apt-get install -y zsh
-  # install latest neovim
-  sudo apt-get install -y software-properties-common
-  sudo add-apt-repository -y ppa:neovim-ppa/stable
-  sudo apt-get install -y neovim
-
+  sudo apt install make gcc ripgrep unzip git xclip neovim tmux jq exuberant-ctags zsh
   # 重复安装, 仅保留这里
   set -euo pipefail \
     && curl -sL https://deb.nodesource.com/setup_14.x | sudo bash - \
@@ -64,6 +53,3 @@ git clone --depth 1 https://github.com/junegunn/fzf.git ~/.fzf
 pip3 install pyright
 
 git --git-dir=$HOME/dotfiles/ --work-tree=$HOME checkout ~/.zshrc
-
-nvim --headless +PlugInstall +qa
-nvim +UpdateRemotePlugins +qa
