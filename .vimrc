@@ -234,6 +234,8 @@ let g:NERDCustomDelimiters = { 'c': { 'left': '/**','right': '*/' } }
 let g:NERDCommentEmptyLines = 1
 " 启用时修整尾随空格注释
 let g:NERDTrimTrailingWhitespace = 1
+" Ubuntu 自带的 Vim 默认是不支持剪贴板的，直接运行这个命令安装增强版：sudo apt update && sudo apt install vim-gtk3 -y
+set clipboard=unnamedplus
 
 " }}}
 
